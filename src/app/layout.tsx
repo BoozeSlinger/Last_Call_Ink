@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { Inter_Tight, JetBrains_Mono } from "next/font/google"; // Removed unused Google Font import
 import "./globals.css";
+import StickyCTA from "@/components/StickyCTA";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -28,6 +29,7 @@ export default function RootLayout({
         className={`${interTight.variable} ${jetbrainsMono.variable} font-sans selection:bg-white selection:text-black`}
       >
         <div className="bg-grain" />
+        <StickyCTA />
         {children}
       </body>
     </html>
