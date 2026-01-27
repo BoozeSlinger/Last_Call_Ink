@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import SidebarBlade from "@/components/SidebarBlade";
 import BentoSection from "@/components/BentoSection";
+import HomeBlogSection from "@/components/HomeBlogSection";
 
 // Performance Optimization: Dynamic import for heavy components with parallax/video
 const HeroReveal = dynamic(() => import("@/components/HeroReveal"), {
@@ -14,6 +15,9 @@ export default function Home() {
       <SidebarBlade />
       <HeroReveal />
       <BentoSection />
+      
+      {/* Blog Teaser Selection */}
+      <HomeBlogSection />
       
       {/* Footer Standard */}
       <footer className="py-20 px-8 border-t border-charcoal bg-matte">
