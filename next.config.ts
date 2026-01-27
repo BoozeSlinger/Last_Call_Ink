@@ -12,7 +12,9 @@ const nextConfig: NextConfig = {
         hostname: 'www.transparenttextures.com',
       }
     ],
+    unoptimized: true,
   },
+  output: 'export',
 };
 
 export default nextConfig;
