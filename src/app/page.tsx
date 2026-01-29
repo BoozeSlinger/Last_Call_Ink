@@ -2,6 +2,9 @@ import dynamic from "next/dynamic";
 import SidebarBlade from "@/components/SidebarBlade";
 import BentoSection from "@/components/BentoSection";
 import HomeBlogSection from "@/components/HomeBlogSection";
+import ServicesSection from "@/components/sections/ServicesSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import ContactSection from "@/components/sections/ContactSection";
 
 // Performance Optimization: Dynamic import for heavy components with parallax/video
 const HeroReveal = dynamic(() => import("@/components/HeroReveal"), {
@@ -14,9 +17,20 @@ export default function Home() {
     <main className="relative bg-matte">
       <SidebarBlade />
       <HeroReveal />
+      
+      {/* The Proof (Projects) */}
       <BentoSection />
       
-      {/* Blog Teaser Selection */}
+      {/* The Receipts (Testimonials) */}
+      <TestimonialsSection />
+
+      {/* House Menu (Services) */}
+      <ServicesSection />
+
+      {/* Pull up a stool (Contact) */}
+      <ContactSection />
+
+      {/* Shift Notes (Blog) */}
       <HomeBlogSection />
       
       {/* Footer Standard */}

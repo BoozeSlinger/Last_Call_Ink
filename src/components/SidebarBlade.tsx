@@ -12,10 +12,10 @@ const SidebarBlade = () => {
   const logoOpacity = useTransform(scrollYProgress, [0.25, 0.35], [0, 1]);
 
   const navLinks = [
-    { name: "HOUSE MENU", href: "/services", stagger: -10 },
-    { name: "THE PROOF", href: "/projects", stagger: 20 },
-    { name: "THE RECEIPTS", href: "/testimonials", stagger: -5 },
-    { name: "PULL UP A STOOL", href: "/contact", stagger: 15 },
+    { name: "HOUSE MENU", href: "#services", stagger: -10 },
+    { name: "THE PROOF", href: "#projects", stagger: 20 },
+    { name: "THE RECEIPTS", href: "#testimonials", stagger: -5 },
+    { name: "PULL UP A STOOL", href: "#contact", stagger: 15 },
     { name: "SHIFT NOTES", href: "/blog", stagger: 25 },
   ];
 
@@ -43,10 +43,16 @@ const SidebarBlade = () => {
           />
         </motion.div>
 
+        <div className="h-[60px] md:h-[100px] flex items-center justify-center mb-8">
+            <div className="-rotate-90 whitespace-nowrap text-stark/60 font-mono text-xs md:text-xs tracking-[0.5em] uppercase pointer-events-none">
+                [ Menu ]
+            </div>
+        </div>
+
         {/* Updated Logo (Coupe Glass) - Now fades in as the splash 'lands' */}
         <motion.div 
             style={{ opacity: logoOpacity }}
-            className="relative h-12 md:h-16 w-12 md:w-16 grayscale opacity-80 brightness-150 pointer-events-none mb-10"
+            className="relative h-12 md:h-16 w-12 md:w-16 grayscale opacity-80 brightness-150 pointer-events-none"
         >
           <Image
             src="/logo.png?v=953"
@@ -57,11 +63,6 @@ const SidebarBlade = () => {
             className="object-contain"
           />
         </motion.div>
-        <div className="mt-auto h-[60px] md:h-[100px] flex items-center justify-center">
-            <div className="-rotate-90 whitespace-nowrap text-stone-500 font-mono text-[8px] md:text-[10px] tracking-[0.4em] uppercase pointer-events-none">
-                [ Menu ]
-            </div>
-        </div>
       </motion.button>
 
       {/* The Vault (Menu Overlay) */}

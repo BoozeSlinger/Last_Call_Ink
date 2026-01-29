@@ -85,10 +85,24 @@ const BentoSection = () => {
       img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000",
       speed: 1.4,
     },
+    {
+      title: "Velvet Rope",
+      category: "Web Design",
+      size: "col-span-1 row-span-1",
+      img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000",
+      speed: 1.25,
+    },
+    {
+      title: "Copper Still",
+      category: "Branding",
+      size: "col-span-1 row-span-1",
+      img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1000",
+      speed: 1.35,
+    },
   ];
 
   return (
-    <section className="min-h-screen bg-matte py-20 md:py-32 pl-[80px] md:pl-24 pr-4 md:pr-24 lg:px-48 relative z-20">
+    <section id="projects" className="min-h-screen bg-matte py-20 md:py-32 pl-[80px] md:pl-24 pr-4 md:pr-24 lg:px-48 relative z-20">
       <div className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end gap-8 border-t border-charcoal pt-12">
         <div>
           <h2 className="text-4xl md:text-8xl font-display font-black text-stark uppercase tracking-tighter leading-none">
