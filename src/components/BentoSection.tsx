@@ -9,6 +9,7 @@ interface Project {
   category: string;
   size: string;
   img: string;
+  href?: string;
   speed: number;
 }
 
@@ -46,9 +47,12 @@ const BentoCard = memo(({ project, idx }: { project: Project, idx: number }) => 
           {project.title}
         </h3>
       </div>
-      <div className="w-12 h-12 rounded-full border border-stark/20 flex items-center justify-center text-stark group-hover:bg-stark group-hover:text-matte transition-all">
+      <a 
+        href={project.href || "#"} 
+        className="w-12 h-12 rounded-full border border-stark/20 flex items-center justify-center text-stark hover:bg-stark hover:text-matte transition-all"
+      >
           <span className="text-xl">↗</span>
-      </div>
+      </a>
     </div>
   </motion.div>
 ));
@@ -58,10 +62,11 @@ BentoCard.displayName = "BentoCard";
 const BentoSection = () => {
   const projects = [
     {
-      title: "Neon Whiskey",
-      category: "Branding",
+      title: "Gra Pow",
+      category: "The Foundation",
       size: "col-span-2 row-span-2",
-      img: "https://images.unsplash.com/photo-1516997121675-4c2d04fe13bc?q=80&w=1000",
+      img: "/images/testimonials/grapow-thumb.png",
+      href: "/grapow",
       speed: 1.1,
     },
     {
@@ -69,6 +74,7 @@ const BentoSection = () => {
       category: "Interior Design",
       size: "col-span-1 row-span-1",
       img: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1000",
+      href: "#",
       speed: 1.3,
     },
     {
@@ -76,6 +82,7 @@ const BentoSection = () => {
         category: "Creative Dir.",
         size: "col-span-1 row-span-2",
         img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1000",
+        href: "#",
         speed: 1.2,
     },
     {
@@ -83,6 +90,7 @@ const BentoSection = () => {
       category: "Strategy",
       size: "col-span-1 row-span-1",
       img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000",
+      href: "#",
       speed: 1.4,
     },
     {
@@ -90,6 +98,7 @@ const BentoSection = () => {
       category: "Web Design",
       size: "col-span-1 row-span-1",
       img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000",
+      href: "#",
       speed: 1.25,
     },
     {
@@ -97,6 +106,7 @@ const BentoSection = () => {
       category: "Branding",
       size: "col-span-1 row-span-1",
       img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1000",
+      href: "#",
       speed: 1.35,
     },
   ];

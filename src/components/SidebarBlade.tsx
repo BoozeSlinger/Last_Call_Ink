@@ -13,8 +13,8 @@ const SidebarBlade = () => {
 
   const navLinks = [
     { name: "HOUSE MENU", href: "#services", stagger: -10 },
-    { name: "THE PROOF", href: "#projects", stagger: 20 },
-    { name: "THE RECEIPTS", href: "#testimonials", stagger: -5 },
+    { name: "THE PROOF", href: "/theproof", stagger: 20 },
+    { name: "THE RECEIPTS", href: "/testimonials", stagger: -5 },
     { name: "PULL UP A STOOL", href: "#contact", stagger: 15 },
     { name: "SHIFT NOTES", href: "/blog", stagger: 25 },
   ];
