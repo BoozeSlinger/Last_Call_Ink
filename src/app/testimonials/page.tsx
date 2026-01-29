@@ -48,7 +48,7 @@ const TestimonialsPage = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-matte text-stark selection:bg-stark selection:text-matte overflow-x-hidden">
+    <main className="min-h-screen bg-bone text-matte selection:bg-matte selection:text-bone overflow-x-hidden">
       <SidebarBlade />
 
       <div className="pl-[60px] md:pl-[80px]">
@@ -61,7 +61,7 @@ const TestimonialsPage = () => {
             className="flex flex-col md:flex-row justify-between items-end gap-12"
           >
             <div>
-              <h1 className="text-8xl md:text-[14rem] font-display font-black leading-[0.8] tracking-tighter uppercase">
+              <h1 className="text-8xl md:text-[14rem] font-display font-black leading-[0.8] tracking-tighter uppercase text-matte">
                 The <br /> Receipts
               </h1>
             </div>
@@ -69,7 +69,7 @@ const TestimonialsPage = () => {
               <p className="font-mono text-[10px] tracking-[0.3em] uppercase opacity-40 mb-6">
                 Social Proof
               </p>
-              <p className="text-xl md:text-2xl font-mono leading-tight border-l border-charcoal pl-6">
+              <p className="text-xl md:text-2xl font-mono leading-tight border-l border-matte/20 pl-6">
                 Verified feedback from the front lines of global hospitality.
               </p>
             </div>
@@ -77,13 +77,13 @@ const TestimonialsPage = () => {
         </section>
 
         {/* Featured: Gra Pow */}
-        <section className="px-8 md:px-24 py-32 border-t border-charcoal/30">
+        <section className="px-8 md:px-24 py-32 border-t border-matte/10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative aspect-video grayscale hover:grayscale-0 transition-all duration-1000 border border-charcoal overflow-hidden group"
+              className="relative aspect-video grayscale hover:grayscale-0 transition-all duration-1000 border border-matte/5 overflow-hidden group"
             >
               <Image 
                 src={featuredTestimonial.img}
@@ -91,7 +91,7 @@ const TestimonialsPage = () => {
                 fill
                 className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-matte to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-linear-to-t from-bone to-transparent opacity-60" />
             </motion.div>
 
             <motion.div
@@ -100,7 +100,7 @@ const TestimonialsPage = () => {
               viewport={{ once: true }}
               className="space-y-12"
             >
-              <div className="relative h-16 w-48 opacity-40 brightness-200 grayscale">
+              <div className="relative h-16 w-48 opacity-40 grayscale group-hover:grayscale-0 transition-all">
                 <Image 
                   src={featuredTestimonial.logo}
                   alt="Gra Pow Logo"
@@ -112,7 +112,7 @@ const TestimonialsPage = () => {
                 &quot;{featuredTestimonial.quote}&quot;
               </blockquote>
               <div className="flex items-center gap-8">
-                <div className="h-px w-12 bg-stark/20" />
+                <div className="h-px w-12 bg-matte/20" />
                 <div>
                   <p className="font-display font-bold text-xl uppercase tracking-tight">{featuredTestimonial.author}</p>
                   <p className="font-mono text-[10px] tracking-widest uppercase opacity-40">{featuredTestimonial.company}</p>
@@ -123,7 +123,7 @@ const TestimonialsPage = () => {
         </section>
 
         {/* Massive Quote List */}
-        <section className="px-8 md:px-24 pb-48 border-t border-charcoal/30">
+        <section className="px-8 md:px-24 pb-48 border-t border-matte/10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-48 mt-32">
             {receipts.map((receipt, idx) => (
               <motion.div
@@ -143,7 +143,7 @@ const TestimonialsPage = () => {
                             &quot;{receipt.quote}&quot;
                         </blockquote>
                         <div className="flex items-center gap-8">
-                            <div className="h-px w-12 bg-stark/20" />
+                            <div className="h-px w-12 bg-matte/20" />
                             <div>
                                 <p className="font-display font-bold text-xl uppercase tracking-tight">{receipt.author}</p>
                                 <p className="font-mono text-[10px] tracking-widest uppercase opacity-40">{receipt.role}</p>
@@ -157,7 +157,7 @@ const TestimonialsPage = () => {
         </section>
 
         {/* Bottom Callout */}
-        <section className="bg-bone text-matte py-48 px-8 md:px-24 text-center">
+        <section className="bg-matte text-stark py-48 px-8 md:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -168,7 +168,7 @@ const TestimonialsPage = () => {
             </h2>
             <a
                 href="/contact"
-                className="inline-block border border-matte/30 px-16 py-8 font-mono text-xs tracking-[0.4em] uppercase hover:bg-matte hover:text-bone transition-all"
+                className="inline-block border border-stark/30 px-16 py-8 font-mono text-xs tracking-[0.4em] uppercase hover:bg-stark hover:text-matte transition-all"
             >
                 Let&apos;s talk shop
             </a>
@@ -176,17 +176,17 @@ const TestimonialsPage = () => {
         </section>
 
         {/* Footer Standard */}
-        <footer className="py-20 px-8 border-t border-charcoal bg-matte">
+        <footer className="py-20 px-8 border-t border-matte/10 bg-bone">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-4xl font-display font-black text-stark/20 uppercase tracking-tighter">
+            <div className="text-4xl font-display font-black text-matte/20 uppercase tracking-tighter">
               LAST CALL <br /> COLLECTIVE
             </div>
-            <div className="text-center font-mono text-[10px] tracking-[0.4em] text-stone-600 uppercase">
+            <div className="text-center font-mono text-[10px] tracking-[0.4em] text-matte opacity-40 uppercase">
               © 2024 / The House Standard
             </div>
             <a 
               href="mailto:contact@lastcall.co"
-              className="font-mono text-[10px] tracking-widest text-stark border border-stark/20 px-8 py-4 uppercase hover:bg-stark hover:text-matte transition-all"
+              className="font-mono text-[10px] tracking-widest text-matte border border-matte/20 px-8 py-4 uppercase hover:bg-matte hover:text-bone transition-all"
             >
               Inquiries
             </a>

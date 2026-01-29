@@ -127,7 +127,7 @@ const ServicesSection = () => {
                 <span className="font-mono text-[10px] tracking-widest opacity-40 uppercase">/ {tier.period}</span>
               </div>
 
-              <p className="font-sans text-sm md:text-base opacity-70 mb-12 leading-relaxed min-h-[4rem]">
+              <p className="font-sans text-sm md:text-base opacity-70 mb-12 leading-relaxed min-h-16">
                 {tier.description}
               </p>
 
@@ -152,26 +152,78 @@ const ServicesSection = () => {
       </div>
 
       {/* AI Audit Callout */}
-      <div className="bg-bone text-matte py-32 px-8 md:px-24 relative overflow-hidden mb-32">
+      <div className="bg-matte text-stark py-32 px-8 md:px-24 relative overflow-hidden mb-32 border-y border-charcoal/30">
         <div className="max-w-4xl relative z-10">
-          <span className="font-mono text-xs tracking-[0.4em] uppercase mb-8 block">SPECIALTY COCKTAIL</span>
+          <span className="font-mono text-xs tracking-[0.4em] uppercase mb-8 block text-amber-500">SPECIALTY COCKTAIL</span>
           <h2 className="text-5xl md:text-8xl font-display font-black tracking-tighter uppercase leading-[0.9] mb-12">
             The AI <br /> Visibility <br /> Audit
           </h2>
-          <p className="text-2xl md:text-3xl font-mono leading-tight mb-16 opacity-80 border-l border-matte/20 pl-8">
+          <p className="text-2xl md:text-3xl font-mono leading-tight mb-16 opacity-80 border-l border-stark/20 pl-8">
             If the AI doesn&apos;t know you exist, you don&apos;t. We deep-dive into how Perplexity, ChatGPT, and Gemini perceive your brand.
           </p>
           <a
-            href="#contact"
-            className="inline-block border-2 border-matte px-12 py-6 font-display text-xl uppercase tracking-widest hover:bg-matte hover:text-bone transition-all"
+            href="/aivisibility"
+            className="inline-block border-2 border-stark px-12 py-6 font-display text-xl uppercase tracking-widest hover:bg-stark hover:text-matte transition-all"
           >
             Get Audited &rarr;
           </a>
         </div>
         
         {/* Subtle Watermark Decoration */}
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 text-[30rem] font-display font-black text-matte opacity-[0.03] uppercase pointer-events-none select-none">
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 text-[30rem] font-display font-black text-stark opacity-[0.03] uppercase pointer-events-none select-none">
           DEEP
+        </div>
+      </div>
+
+      {/* Testimonial Snippets (Alternating) */}
+      <div className="px-8 md:px-24 mb-32 overflow-hidden">
+        <div className="space-y-32">
+          {[
+            {
+              quote: "THEY DON'T JUST BUILD WEBSITES. THEY BUILD ATMOSPHERES.",
+              author: "MARCUS REED",
+              side: "left"
+            },
+            {
+              quote: "A RARE PARTNER WHO ACTUALLY UNDERSTANDS THE FLOW OF BUSY SERVICE.",
+              author: "JULIAN VANCE",
+              side: "right"
+            },
+            {
+              quote: "THE AI AUDIT WAS A WAKE-UP CALL. WE WERE INVISIBLE TO CHATGPT.",
+              author: "SARAH JENKINS",
+              side: "left"
+            }
+          ].map((snippet, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: snippet.side === "left" ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className={`flex flex-col ${snippet.side === "right" ? "items-end text-right" : "items-start text-left"}`}
+            >
+              <div className="max-w-xl">
+                 <blockquote className="text-2xl md:text-4xl font-display font-black tracking-tighter uppercase leading-[0.9] mb-6">
+                    &quot;{snippet.quote}&quot;
+                 </blockquote>
+                 <p className="font-mono text-[10px] tracking-widest uppercase opacity-40">— {snippet.author}</p>
+              </div>
+            </motion.div>
+          ))}
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="flex justify-center pt-12"
+          >
+            <a 
+              href="/testimonials"
+              className="font-mono text-[10px] tracking-[0.4em] uppercase border-b border-stark/20 pb-2 hover:border-stark transition-all"
+            >
+              View All Receipts &rarr;
+            </a>
+          </motion.div>
         </div>
       </div>
 
