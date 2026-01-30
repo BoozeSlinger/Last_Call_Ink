@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const AIAuditSection = () => {
   return (
-    <section className="bg-matte relative pt-32 pb-32 overflow-hidden">
+    <section className="bg-matte relative pt-32 pb-32 overflow-hidden pl-[80px] md:pl-0">
       {/* Technical Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)] z-0 pointer-events-none" />
       

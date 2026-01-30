@@ -1,6 +1,6 @@
 "use client";
 
-import React, { memo } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -13,51 +13,97 @@ interface Project {
   speed: number;
 }
 
-const BentoCard = memo(({ project, idx }: { project: Project, idx: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: idx * 0.1 }}
-    className={`${project.size} relative group overflow-hidden border border-charcoal cursor-pointer`}
-  >
-     {/* Inversion Hover Effect */}
+const SpotlightCard = ({ 
+  children, 
+  className = "", 
+  spotlightColor = "rgba(245, 158, 11, 0.25)" 
+}: { 
+  children: React.ReactNode; 
+  className?: string; 
+  spotlightColor?: string;
+}) => {
+  const divRef = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [opacity, setOpacity] = useState(0);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!divRef.current) return;
+    const rect = divRef.current.getBoundingClientRect();
+    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  const handleMouseEnter = () => {
+    setOpacity(1);
+  };
+
+  const handleMouseLeave = () => {
+    setOpacity(0);
+  };
+
+  return (
     <motion.div
-       whileHover={{ scale: 1.05 }}
-       transition={{ duration: 0.6 }}
-       className="relative w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700"
+      ref={divRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={`relative overflow-hidden ${className}`}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      // Standard layout transition
+      transition={{ duration: 0.5 }}
+    >
+      {/* Spotlight Halo */}
+      <div
+        className="pointer-events-none absolute -inset-px opacity-0 transition duration-500 z-30 mix-blend-screen"
+        style={{
+          opacity,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
+        }}
+      />
+      {children}
+    </motion.div>
+  );
+};
+
+const BentoCard = ({ project, idx }: { project: Project, idx: number }) => (
+  <SpotlightCard
+    className={`${project.size} relative group border border-charcoal/50 hover:border-amber-500/50 transition-colors cursor-pointer bg-charcoal`}
+  >
+     {/* Image Container with Zoom Effect */}
+    <motion.div
+       className="relative w-full h-full z-10"
     >
         <Image
           src={project.img}
           alt={`Project: ${project.title}`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover opacity-100 group-hover:scale-110 transition-all duration-1000"
+          className="object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
         />
+        
+        {/* Dark Gradient Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-matte via-matte/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
     </motion.div>
 
-    <div className="absolute inset-0 bg-linear-to-t from-matte via-transparent to-transparent opacity-40" />
-    
-    <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end transform translate-y-4 group-hover:translate-y-0 transition-transform">
+    <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 relative z-20">
       <div>
-        <span className="font-mono text-[10px] tracking-widest text-amber-500 uppercase">
+        <span className="font-mono text-[10px] tracking-widest text-amber-500 uppercase block mb-2 opacity-80 group-hover:opacity-100 transition-opacity">
           {project.category}
         </span>
-        <h3 className="text-3xl font-display font-black text-stark uppercase tracking-tighter">
+        <h3 className="text-3xl font-display font-black text-stark uppercase tracking-tighter drop-shadow-lg group-hover:text-white transition-colors">
           {project.title}
         </h3>
       </div>
-      <a 
-        href={project.href || "#"} 
-        className="w-12 h-12 rounded-full border border-stark/20 flex items-center justify-center text-stark hover:bg-stark hover:text-matte transition-all"
+      <motion.div 
+        whileHover={{ rotate: 45, scale: 1.1 }}
+        className="w-12 h-12 rounded-full border border-stark/20 flex items-center justify-center text-stark bg-white/5 backdrop-blur-sm hover:bg-amber-500 hover:border-amber-500 hover:text-matte transition-all duration-300 shadow-xl"
       >
           <span className="text-xl">↗</span>
-      </a>
+      </motion.div>
     </div>
-  </motion.div>
-));
-
-BentoCard.displayName = "BentoCard";
+  </SpotlightCard>
+);
 
 const BentoSection = () => {
   const projects = [
