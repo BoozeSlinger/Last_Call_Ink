@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -66,7 +66,7 @@ const SpotlightCard = ({
   );
 };
 
-const BentoCard = ({ project, idx }: { project: Project, idx: number }) => (
+const BentoCard = ({ project }: { project: Project }) => (
   <SpotlightCard
     className={`${project.size} relative group border border-charcoal/50 hover:border-amber-500/50 transition-colors cursor-pointer bg-charcoal`}
   >
@@ -158,7 +158,7 @@ const BentoSection = () => {
   ];
 
   return (
-    <section id="projects" className="min-h-screen bg-matte/10 backdrop-blur-xs py-20 md:py-32 pl-[80px] md:pl-24 pr-4 md:pr-24 lg:px-48 relative z-20">
+    <section id="projects" className="bg-matte/10 backdrop-blur-xs py-20 md:py-32 pl-[80px] md:pl-24 pr-4 md:pr-24 lg:px-48 relative z-20">
       <div className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end gap-8 border-t border-charcoal pt-12">
         <div>
           <h2 className="text-4xl md:text-8xl font-display font-black text-stark uppercase tracking-tighter leading-none">
@@ -171,8 +171,8 @@ const BentoSection = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[400px]">
-        {projects.map((project, idx) => (
-          <BentoCard key={project.title} project={project} idx={idx} />
+        {projects.map((project) => (
+          <BentoCard key={project.title} project={project} />
         ))}
       </div>
     </section>
