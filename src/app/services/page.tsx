@@ -8,48 +8,53 @@ const ServicesPage = () => {
   const tiers = [
     {
       name: "THE WELL",
-      price: "395",
+      price: "449",
       period: "monthly",
-      description: "Foundation for the local standard. We manage the essentials so you can manage the bar.",
+      description: "The Insurance Policy. Protect your reputation without the busy work.",
       features: [
-        "Local Search Optimization",
-        "Google Business Management",
-        "Monthly Ranking Snapshots",
-        "Direct Support Channel",
+        "Reputation Defense (All Reviews w/in 24hr)",
+        "Active Search Signal (Weekly Profile Updates)",
+        "Listing Maintenance",
+        "Data Collection Management",
       ],
       isPopular: false,
     },
     {
       name: "THE CALL",
-      price: "850",
+      price: "1,149",
       period: "monthly",
-      description: "The Growth Standard. Aggressive optimization for venues looking to steal market share.",
+      description: "The 'Fill The Seats' Button. The engine that drives revenue.",
       features: [
         "Everything in The Well",
-        "AI Visibility Audit (Quarterly)",
-        "Technical AEO Management",
-        "2 Content Updates / Month",
-        "Strategic Keyword Mapping",
+        "The Birthday Machine (Auto-Texts)",
+        "Missed Call Recovery System",
+        "Slow Night Blasts (6x/Month)",
+        "Social Media Autopilot (3x/Week)",
       ],
       isPopular: true,
     },
     {
       name: "TOP SHELF",
-      price: "1,800",
+      price: "2,449",
       period: "monthly",
-      description: "Absolute market dominance. Tailored strategy for flagship venues and multi-unit groups.",
+      description: "The Household Name. For the venue that wants to be #1 in the city.",
       features: [
         "Everything in The Call",
-        "Priority 24/7 Response",
-        "Strategic Branding Advisory",
-        "Weekly Performance Syncs",
-        "Custom Feature Development",
+        "Monthly Content Shoots (Photo/Video)",
+        "Daily Social Management",
+        "Aggressive Influencer Outreach",
+        "VIP Access (24/7 Owner Line)",
       ],
       isPopular: false,
     },
   ];
 
   const customServices = [
+    {
+      title: "FOUNDATION",
+      subtitle: "THE DIGITAL RENOVATION",
+      description: "Mobile-first website, pro photography, and digital plumbing fix. The one-time setup that builds the machine. ($2,500)",
+    },
     {
       title: "WEB DESIGN",
       subtitle: "AEO OPTIMIZED",
@@ -59,11 +64,6 @@ const ServicesPage = () => {
       title: "BRANDING",
       subtitle: "VISUAL IDENTITY",
       description: "Industrial-grade logos, typography, and brand systems that cut through the noise of the industry.",
-    },
-    {
-      title: "CONTENT",
-      subtitle: "PRODUCTION",
-      description: "High-end photography and video that captures the mood, the movement, and the character of your space.",
     },
   ];
 
@@ -86,11 +86,11 @@ const ServicesPage = () => {
               </h1>
             </div>
             <div className="max-w-md pb-4">
-              <p className="font-mono text-[10px] tracking-[0.3em] uppercase opacity-40 mb-6">
-                Service Packages
+              <p className="font-mono text-[10px] tracking-[0.3em] uppercase opacity-40 mb-6 font-bold text-amber-600">
+                Growth Engines
               </p>
               <p className="text-xl md:text-2xl font-mono leading-tight border-l-2 border-charcoal pl-6">
-                Tailored digital solutions for the industry. From basic foundation to absolute dominance.
+                Turn visibility into revenue. We build the machine, then we run it.
               </p>
             </div>
           </motion.div>
@@ -110,12 +110,12 @@ const ServicesPage = () => {
               >
                 {tier.isPopular && (
                   <div className="absolute top-0 right-0 bg-stark text-matte font-mono text-[8px] tracking-widest px-4 py-1 uppercase">
-                    Recommended
+                    Revenue Engine
                   </div>
                 )}
                 
                 <div className="mb-12">
-                  <span className="font-mono text-[10px] tracking-[0.4em] opacity-40 uppercase">[ {idx + 1} ]</span>
+                  <span className="font-mono text-[10px] tracking-[0.4em] opacity-40 uppercase">[ PH. 2 ]</span>
                   <h2 className="text-4xl md:text-5xl font-display font-black tracking-tighter uppercase mt-4">
                     {tier.name}
                   </h2>
@@ -133,7 +133,7 @@ const ServicesPage = () => {
                 <ul className="space-y-4 mb-16">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex gap-4 items-start font-mono text-[10px] tracking-widest uppercase opacity-60">
-                      <span className="text-stark">→</span>
+                      <span className="text-amber-600 font-bold">→</span>
                       {feature}
                     </li>
                   ))}
@@ -143,7 +143,7 @@ const ServicesPage = () => {
                   href="/contact"
                   className="block w-full text-center border border-stark/20 py-6 font-mono text-[10px] tracking-[0.3em] uppercase hover:bg-stark hover:text-matte transition-all group-hover:border-stark"
                 >
-                  Request Seat
+                  Inquire
                 </a>
               </motion.div>
             ))}
@@ -153,18 +153,27 @@ const ServicesPage = () => {
         {/* AI Audit Callout */}
         <section className="bg-bone text-matte py-32 px-8 md:px-24 relative overflow-hidden">
           <div className="max-w-4xl relative z-10">
-            <span className="font-mono text-xs tracking-[0.4em] uppercase mb-8 block">SPECIALTY COCKTAIL</span>
-            <h2 className="text-5xl md:text-8xl font-display font-black tracking-tighter uppercase leading-[0.9] mb-12">
-              The AI <br /> Visibility <br /> Audit
+            <span className="font-mono text-xs tracking-[0.4em] uppercase mb-8 block text-amber-600 font-bold">THE DIAGNOSTIC</span>
+            <h2 className="text-5xl md:text-8xl font-display font-black tracking-tighter uppercase leading-[0.9] mb-8">
+              The AI <br /> Truth <br /> Audit <span className="text-amber-600 text-4xl align-top block mt-4 md:inline md:mt-0">— $97</span>
             </h2>
-            <p className="text-2xl md:text-3xl font-mono leading-tight mb-16 opacity-80 border-l border-matte/20 pl-8">
-              If the AI doesn&apos;t know you exist, you don&apos;t. We deep-dive into how Perplexity, ChatGPT, and Gemini perceive your brand.
+            <div className="mb-12 border-l-4 border-amber-600 pl-8">
+               <h3 className="text-xl md:text-2xl font-bold font-mono uppercase mb-4">Stop Losing Customers to the Bar Down the Street.</h3>
+               <p className="text-2xl md:text-3xl font-mono leading-tight opacity-80">
+                 When someone asks Siri or ChatGPT where to grab a drink, are you the answer? Or are you invisible?
+               </p>
+            </div>
+            
+            <p className="font-sans text-lg opacity-70 mb-12 max-w-2xl leading-relaxed">
+               We run a full diagnostic on how AI sees your bar. We check if you&apos;re recommended, find broken digital plumbing, and show you exactly who is stealing your traffic. <br/><br/>
+               <span className="font-black">The Catch:</span> If you move forward with the Foundation Setup, the $97 is credited back. You pay nothing for the truth.
             </p>
+
             <a
-              href="/contact"
-              className="inline-block border-2 border-matte px-12 py-6 font-display text-xl uppercase tracking-widest hover:bg-matte hover:text-bone transition-all"
+              href="/aivisibility"
+              className="inline-block border-2 border-matte px-12 py-6 font-display text-xl uppercase tracking-widest hover:bg-matte hover:text-bone transition-all font-bold"
             >
-              Get Audited &rarr;
+              Book Audit &rarr;
             </a>
           </div>
           

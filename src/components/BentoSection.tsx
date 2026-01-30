@@ -27,16 +27,16 @@ const BentoCard = memo(({ project, idx }: { project: Project, idx: number }) => 
        transition={{ duration: 0.6 }}
        className="relative w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700"
     >
-      <Image
-        src={project.img}
-        alt={`Project: ${project.title}`}
-        fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000"
-      />
+        <Image
+          src={project.img}
+          alt={`Project: ${project.title}`}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover opacity-100 group-hover:scale-110 transition-all duration-1000"
+        />
     </motion.div>
 
-    <div className="absolute inset-0 bg-linear-to-t from-matte via-transparent to-transparent opacity-80" />
+    <div className="absolute inset-0 bg-linear-to-t from-matte via-transparent to-transparent opacity-40" />
     
     <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end transform translate-y-4 group-hover:translate-y-0 transition-transform">
       <div>
@@ -66,7 +66,7 @@ const BentoSection = () => {
       category: "The Foundation",
       size: "col-span-2 row-span-2",
       img: "/images/testimonials/grapow-thumb.png",
-      href: "/grapow",
+      href: "/work/gra-pow",
       speed: 1.1,
     },
     {
@@ -74,7 +74,7 @@ const BentoSection = () => {
       category: "Interior Design",
       size: "col-span-1 row-span-1",
       img: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1000",
-      href: "#",
+      href: "/work/the-standard",
       speed: 1.3,
     },
     {
@@ -82,7 +82,7 @@ const BentoSection = () => {
         category: "Creative Dir.",
         size: "col-span-1 row-span-2",
         img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1000",
-        href: "#",
+        href: "/work/liquid-gold",
         speed: 1.2,
     },
     {
@@ -90,7 +90,7 @@ const BentoSection = () => {
       category: "Strategy",
       size: "col-span-1 row-span-1",
       img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000",
-      href: "#",
+      href: "/work/late-night",
       speed: 1.4,
     },
     {
@@ -98,7 +98,7 @@ const BentoSection = () => {
       category: "Web Design",
       size: "col-span-1 row-span-1",
       img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000",
-      href: "#",
+      href: "/work/velvet-rope",
       speed: 1.25,
     },
     {
@@ -106,13 +106,13 @@ const BentoSection = () => {
       category: "Branding",
       size: "col-span-1 row-span-1",
       img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1000",
-      href: "#",
+      href: "/work/copper-still",
       speed: 1.35,
     },
   ];
 
   return (
-    <section id="projects" className="min-h-screen bg-matte py-20 md:py-32 pl-[80px] md:pl-24 pr-4 md:pr-24 lg:px-48 relative z-20">
+    <section id="projects" className="min-h-screen bg-matte/10 backdrop-blur-xs py-20 md:py-32 pl-[80px] md:pl-24 pr-4 md:pr-24 lg:px-48 relative z-20">
       <div className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end gap-8 border-t border-charcoal pt-12">
         <div>
           <h2 className="text-4xl md:text-8xl font-display font-black text-stark uppercase tracking-tighter leading-none">

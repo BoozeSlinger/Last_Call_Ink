@@ -3,6 +3,8 @@ import SidebarBlade from "@/components/SidebarBlade";
 import BentoSection from "@/components/BentoSection";
 import HomeBlogSection from "@/components/HomeBlogSection";
 import ServicesSection from "@/components/sections/ServicesSection";
+import AIAuditSection from "@/components/sections/AIAuditSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 // Performance Optimization: Dynamic import for heavy components with parallax/video
@@ -20,8 +22,14 @@ export default function Home() {
       {/* The Proof (Projects) */}
       <BentoSection />
       
-      {/* House Menu (Services + Testimonial Snippets) */}
+      {/* The Investigation (AI Audit) */}
+      <AIAuditSection />
+      
+      {/* House Menu (Services: Foundation + Tiers) */}
       <ServicesSection />
+
+      {/* The Receipts (Testimonial Snippets) */}
+      <TestimonialsSection />
 
       {/* Pull up a stool (Contact) */}
       <ContactSection />

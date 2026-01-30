@@ -2,35 +2,34 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import TestimonialsSection from "./TestimonialsSection";
 
 const tiers = [
   {
     name: "THE WELL",
     price: "449",
     period: "monthly",
-    description: "Essential visibility. Passive customer gathering. The 'bucket' you need to survive.",
+    description: "The Insurance Policy. Protect your reputation without the busy work.",
     features: [
-      "Discovery & AI Audit",
-      "Core Visibility Layer (GBP/NAP)",
-      "Essential SEO Pipeline",
-      "Reputation Shield (24h Response)",
-      "Passive Gathering (QR/Landing Page)",
-      "Secure Hosting & 'Inner Circle' Access",
+      "Reputation Defense (All Reviews w/in 24hr)",
+      "Active Search Signal (Weekly Profile Updates)",
+      "Listing Maintenance (Holiday Hours/Details)",
+      "Data Collection Management",
     ],
-    isPopular: false,
   },
   {
     name: "THE CALL",
     price: "1,149",
     period: "monthly",
-    description: "The Growth Engine. We fill the bucket and pour it back. Active traffic on demand.",
+    description: "The 'Fill The Seats' Button. The engine that drives revenue.",
     features: [
       "Everything in The Well",
-      "Active Gathering (Email/SMS)",
-      "10x 'Slow Day' SMS Blasts",
-      "Social Syndication (8 Posts/mo)",
-      "Local Events & Menu SEO",
-      "Monthly Strategy Call",
+      "The Birthday Machine (Auto-Texts)",
+      "Missed Call Recovery System",
+      "Slow Night Blasts (6x/Month)",
+      "Social Media Autopilot (3x/Week)",
+      "Influencer Invites (6/Month)",
+      "Real ROI Reports",
     ],
     isPopular: true,
   },
@@ -38,216 +37,215 @@ const tiers = [
     name: "TOP SHELF",
     price: "2,449",
     period: "monthly",
-    description: "Absolute market dominance. High-end content production and white-glove management.",
+    description: "The Household Name. For the venue that wants to be #1 in the city.",
     features: [
       "Everything in The Call",
-      "On-site Content Shoot (Photo/Video)",
-      "Full Social Management (Daily)",
-      "Deep Dive Competitor Strategy",
-      "Priority 24/7 Response",
-      "Executive Growth Dashboard",
+      "Monthly Content Shoots (Photo/Video)",
+      "Daily Social Management (5-7x/Week)",
+      "Aggressive Influencer Outreach (10+/mo)",
+      "VIP Access (24/7 Owner Line)",
     ],
-    isPopular: false,
-  },
-];
-
-const customServices = [
-  {
-    title: "WEB DESIGN",
-    subtitle: "AEO OPTIMIZED",
-    description: "We don't just build sites; we build answer-engine machines. Fast, cinematic, and built for discovery.",
-  },
-  {
-    title: "BRANDING",
-    subtitle: "VISUAL IDENTITY",
-    description: "Industrial-grade logos, typography, and brand systems that cut through the noise of the industry.",
-  },
-  {
-    title: "CONTENT",
-    subtitle: "PRODUCTION",
-    description: "High-end photography and video that captures the mood, the movement, and the character of your space.",
-  },
+  }
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="bg-matte text-stark pt-32 pb-48">
-      {/* Hero Section */}
-      <div className="px-8 md:px-24 mb-24">
+    <section id="services" className="bg-matte text-stark pt-0 pb-32 relative z-10">
+       {/* Visual Connector Line */}
+       <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 h-24 w-px bg-linear-to-b from-amber-500 to-transparent opacity-50" />
+
+      {/* THE FOUNDATION: Pop-out Card Style */}
+      <div className="px-8 md:px-24 mb-32 -mt-12 relative z-20">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row justify-between items-end gap-12"
+           initial={{ opacity: 0, y: 50 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 1 }}
+           className="w-full border border-white/10 bg-matte/40 backdrop-blur-md text-stark p-12 md:p-24 relative overflow-hidden group shadow-2xl hover:border-white/20 transition-all duration-500"
         >
-          <div>
-            <h2 className="text-8xl md:text-[12rem] font-display font-black leading-[0.8] tracking-tighter uppercase">
-              House <br /> Menu
-            </h2>
-          </div>
-          <div className="max-w-md pb-4">
-            <p className="font-mono text-[10px] tracking-[0.3em] uppercase opacity-40 mb-6">
-              Service Packages
-            </p>
-            <p className="text-xl md:text-2xl font-mono leading-tight border-l-2 border-charcoal pl-6">
-              Tailored digital solutions for the industry. From basic foundation to absolute dominance.
-            </p>
-          </div>
+           <div className="absolute top-0 right-0 p-8">
+             <span className="font-mono text-xs tracking-widest text-amber-600 uppercase opacity-60 group-hover:opacity-100 transition-opacity font-bold">PHASE 1</span>
+           </div>
+           
+           <div className="max-w-5xl relative z-10">
+              <span className="font-mono text-[10px] tracking-[0.5em] text-stone-500 uppercase mb-8 block">THE DIGITAL RENOVATION</span>
+              <h3 className="text-5xl md:text-8xl font-display font-black tracking-tighter uppercase leading-[0.8] mb-12 text-stark group-hover:text-white transition-colors">
+                The <br /> Foundation 
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+                 <div>
+                    <p className="text-xl md:text-2xl font-mono leading-tight opacity-80 mb-10 border-l-4 border-amber-500 pl-6">
+                       Stop losing customers before they even walk in. We fix the plumbing once, so you&apos;re ready to receive traffic.
+                    </p>
+                    <div className="flex flex-col justify-between h-full">
+                         <div className="mt-8">
+                            <span className="block font-mono text-[10px] tracking-widest opacity-40 mb-2 uppercase text-stark">Standard Setup</span>
+                            <div className="flex items-baseline gap-4">
+                                <span className="text-5xl md:text-6xl font-display font-black tracking-tighter text-stark">$2,500</span>
+                            </div>
+                            <span className="block font-mono text-xs tracking-widest text-amber-600 mt-2 uppercase font-bold">One-Time Investment</span>
+                         </div>
+                         <a href="/contact" className="w-full md:w-auto text-center border-2 border-stark px-10 py-5 font-mono text-xs tracking-[0.3em] uppercase hover:bg-stark hover:text-matte transition-all mt-10 md:mt-0 font-bold">
+                            Start Renovation
+                         </a>
+                    </div>
+                 </div>
+
+                 {/* Detailed Services List */}
+                 <ul className="space-y-8">
+                    {[
+                        { id: "01", title: "Mobile-First Custom Website", desc: "80% of customers decide on their phone. We build for speed and menus, not flashy nonsense. Designed to rank for \"Best drinks near me\"." },
+                        { id: "02", title: "Pro Photography", desc: "No more iPhone pics. We shoot 20-30 professional photos of your food, drinks, and venue so your online vibe matches your real-life vibe." },
+                        { id: "03", title: "Digital Plumbing Fix", desc: "We force-update your info across 50+ platforms (Google, Yelp, Apple Maps, etc.) so customers never show up to a locked door." },
+                        { id: "04", title: "List Builder System", desc: "QR codes and landing pages that turn random guests into a contact list you can actually use." }
+                    ].map((item, idx) => (
+                        <motion.li 
+                            key={idx} 
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 + (idx * 0.1) }}
+                            className="group"
+                        >
+                            <h4 className="font-display font-black text-xl uppercase mb-2 flex items-center gap-3 group-hover:text-amber-500 transition-colors">
+                                <span className="text-amber-600 text-sm group-hover:text-amber-500">{item.id}</span> {item.title}
+                            </h4>
+                            <p className="font-mono text-xs opacity-70 leading-relaxed uppercase tracking-wide">
+                                {item.desc}
+                            </p>
+                        </motion.li>
+                    ))}
+                 </ul>
+              </div>
+           </div>
+           
+           {/* Abstract Watermark */}
+           <div className="absolute -bottom-20 -right-20 text-[20rem] font-display font-black text-stark/5 pointer-events-none select-none uppercase -rotate-6">
+              FIX
+           </div>
         </motion.div>
       </div>
 
-      {/* Pricing Tiers Section */}
+      {/* Header for Monthly Tiers */}
+      <div className="px-8 md:px-24 mb-24">
+        <motion.div
+           initial={{ opacity: 0 }}
+           whileInView={{ opacity: 1 }}
+           viewport={{ once: true }}
+           className="border-t border-charcoal/30 pt-12 flex flex-col md:flex-row justify-between items-end gap-8"
+        >
+            <div>
+                <span className="font-mono text-xs tracking-[0.3em] uppercase text-amber-500 mb-4 block">PHASE 2 / GROWTH ENGINES</span>
+                <h2 className="text-6xl md:text-8xl font-display font-black leading-[0.8] tracking-tighter uppercase">
+                    Build The Bar <br /> Then Fill It
+                </h2>
+            </div>
+            <p className="max-w-md text-right font-mono opacity-50 text-sm leading-relaxed">
+                Most agencies sell clicks. We deal in Revenue and Regulars. <br/>
+                Choose your engine.
+            </p>
+        </motion.div>
+      </div>
+
+      {/* Monthly Tiers: Staggered Cards */}
       <div className="px-8 md:px-24 mb-32">
-        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-charcoal/30">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-8">
           {tiers.map((tier, idx) => (
             <motion.div
               key={tier.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className={`p-10 border-b md:border-b-0 border-charcoal/30 md:border-r last:border-r-0 relative group hover:bg-white/5 transition-colors`}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                duration: 0.8, 
+                delay: idx * 0.2,
+                ease: [0.16, 1, 0.3, 1]
+              }}
+              className={`p-10 border border-charcoal relative group hover:border-stark/40 transition-colors flex flex-col justify-between min-h-[600px] ${
+                idx === 1 ? "md:-translate-y-8 bg-white/5 border-amber-500/30" : idx === 2 ? "md:translate-y-8" : ""
+              }`}
             >
-              {tier.isPopular && (
-                <div className="absolute top-0 right-0 bg-stark text-matte font-mono text-[8px] tracking-widest px-4 py-1 uppercase">
-                  Recommended
+              <div>
+                <div className="flex justify-between items-start mb-12">
+                  <span className="font-mono text-[10px] tracking-[0.4em] opacity-40 uppercase">[ PH. 2 ]</span>
+                  {tier.isPopular && (
+                    <span className="bg-amber-500 text-matte font-mono text-[8px] tracking-widest px-3 py-1 uppercase font-bold">Most Popular</span>
+                  )}
                 </div>
-              )}
-              
-              <div className="mb-12">
-                <span className="font-mono text-[10px] tracking-[0.4em] opacity-40 uppercase">[ {idx + 1} ]</span>
-                <h2 className="text-4xl md:text-5xl font-display font-black tracking-tighter uppercase mt-4">
+                
+                <h4 className="text-4xl lg:text-5xl font-display font-black tracking-tighter uppercase mb-2">
                   {tier.name}
-                </h2>
+                </h4>
+                <div className="flex items-baseline gap-2 mb-12">
+                  <span className="text-4xl font-display font-black tracking-tighter text-stark/90">${tier.price}</span>
+                  <span className="font-mono text-[10px] tracking-widest opacity-40 uppercase">/ {tier.period}</span>
+                </div>
+
+                <p className="font-mono text-[10px] uppercase tracking-widest leading-relaxed opacity-60 mb-12 border-l border-amber-500/20 pl-4">
+                  {tier.description}
+                </p>
+
+                <ul className="space-y-6 mb-16">
+                  {tier.features.map((feature) => (
+                    <li key={feature} className="flex gap-4 items-start font-mono text-[9px] tracking-widest uppercase opacity-40 group-hover:opacity-80 transition-opacity">
+                      <span className="text-amber-500">→</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              <div className="mb-12 flex items-baseline gap-2">
-                <span className="text-5xl font-display font-black tracking-tighter text-stark/90">${tier.price}</span>
-                <span className="font-mono text-[10px] tracking-widest opacity-40 uppercase">/ {tier.period}</span>
-              </div>
-
-              <p className="font-sans text-sm md:text-base opacity-70 mb-12 leading-relaxed min-h-16">
-                {tier.description}
-              </p>
-
-              <ul className="space-y-4 mb-16">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex gap-4 items-start font-mono text-[10px] tracking-widest uppercase opacity-60">
-                    <span className="text-stark">→</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
 
               <a
-                href="#contact"
+                href="/contact"
                 className="block w-full text-center border border-stark/20 py-6 font-mono text-[10px] tracking-[0.3em] uppercase hover:bg-stark hover:text-matte transition-all group-hover:border-stark"
               >
-                Request Seat
+                Inquire
               </a>
             </motion.div>
           ))}
         </div>
       </div>
-
-      {/* AI Audit Callout */}
-      <div className="bg-matte text-stark py-32 px-8 md:px-24 relative overflow-hidden mb-32 border-y border-charcoal/30">
-        <div className="max-w-4xl relative z-10">
-          <span className="font-mono text-xs tracking-[0.4em] uppercase mb-8 block text-amber-500">SPECIALTY COCKTAIL</span>
-          <h2 className="text-5xl md:text-8xl font-display font-black tracking-tighter uppercase leading-[0.9] mb-12">
-            The AI <br /> Visibility <br /> Audit
-          </h2>
-          <p className="text-2xl md:text-3xl font-mono leading-tight mb-16 opacity-80 border-l border-stark/20 pl-8">
-            If the AI doesn&apos;t know you exist, you don&apos;t. We deep-dive into how Perplexity, ChatGPT, and Gemini perceive your brand.
-          </p>
-          <a
-            href="/aivisibility"
-            className="inline-block border-2 border-stark px-12 py-6 font-display text-xl uppercase tracking-widest hover:bg-stark hover:text-matte transition-all"
+      
+      {/* Terms & Guarantees */}
+      <div className="px-8 md:px-24 pb-20">
+          <motion.div
+             initial={{ opacity: 0, scale: 0.95 }}
+             whileInView={{ opacity: 1, scale: 1 }}
+             viewport={{ once: true }}
+             className="bg-stark/90 backdrop-blur-md text-matte p-12 md:p-20 relative overflow-hidden"
           >
-            Get Audited &rarr;
-          </a>
-        </div>
-        
-        {/* Subtle Watermark Decoration */}
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 text-[30rem] font-display font-black text-stark opacity-[0.03] uppercase pointer-events-none select-none">
-          DEEP
-        </div>
-      </div>
-
-      {/* Testimonial Snippets (Alternating) */}
-      <div className="px-8 md:px-24 mb-32 overflow-hidden">
-        <div className="space-y-32">
-          {[
-            {
-              quote: "THEY DON'T JUST BUILD WEBSITES. THEY BUILD ATMOSPHERES.",
-              author: "MARCUS REED",
-              side: "left"
-            },
-            {
-              quote: "A RARE PARTNER WHO ACTUALLY UNDERSTANDS THE FLOW OF BUSY SERVICE.",
-              author: "JULIAN VANCE",
-              side: "right"
-            },
-            {
-              quote: "THE AI AUDIT WAS A WAKE-UP CALL. WE WERE INVISIBLE TO CHATGPT.",
-              author: "SARAH JENKINS",
-              side: "left"
-            }
-          ].map((snippet, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, x: snippet.side === "left" ? -100 : 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className={`flex flex-col ${snippet.side === "right" ? "items-end text-right" : "items-start text-left"}`}
-            >
-              <div className="max-w-xl">
-                 <blockquote className="text-2xl md:text-4xl font-display font-black tracking-tighter uppercase leading-[0.9] mb-6">
-                    &quot;{snippet.quote}&quot;
-                 </blockquote>
-                 <p className="font-mono text-[10px] tracking-widest uppercase opacity-40">— {snippet.author}</p>
-              </div>
-            </motion.div>
-          ))}
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="flex justify-center pt-12"
-          >
-            <a 
-              href="/testimonials"
-              className="font-mono text-[10px] tracking-[0.4em] uppercase border-b border-stark/20 pb-2 hover:border-stark transition-all"
-            >
-              View All Receipts &rarr;
-            </a>
+             <div className="max-w-4xl relative z-10">
+                 <h3 className="text-4xl md:text-6xl font-display font-black tracking-tighter uppercase leading-[0.9] mb-8">
+                     Terms & <br/> Guarantees
+                 </h3>
+                 
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+                     <div>
+                         <h4 className="font-display font-black text-lg uppercase mb-4 border-b border-matte/20 pb-2">Standard Terms</h4>
+                         <p className="font-mono text-xs opacity-80 leading-relaxed font-bold">
+                             Month-to-month. Cancel anytime with 30 days notice. You own everything we build (website, photos, data).
+                         </p>
+                     </div>
+                     <div>
+                         <h4 className="font-display font-black text-lg uppercase mb-4 border-b border-matte/20 pb-2">Partner Offer</h4>
+                         <p className="font-mono text-xs opacity-80 leading-relaxed font-bold">
+                             Commit to 6 months to unlock the <span className="text-amber-600">$1,500 Foundation Setup</span> (Save $1,000 off standard $2,500). Early cancellation requires paying the difference on the setup fee.
+                         </p>
+                     </div>
+                 </div>
+             </div>
+             
+             {/* Watermark */}
+             <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 text-[20rem] font-display font-black text-matte opacity-[0.05] uppercase pointer-events-none select-none">
+                TERMS
+             </div>
           </motion.div>
-        </div>
       </div>
 
-      {/* Custom Services Section */}
-      <div className="px-8 md:px-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
-          {customServices.map((service, idx) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.2 }}
-            >
-              <div className="mb-8">
-                <h3 className="text-3xl font-display font-black tracking-tighter uppercase">{service.title}</h3>
-                <span className="font-mono text-[10px] tracking-widest uppercase text-amber-500">{service.subtitle}</span>
-              </div>
-              <p className="font-sans text-lg opacity-60 leading-relaxed max-w-sm">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+      {/* Embedded Testimonials */}
+      <div className="border-t border-charcoal/30">
+        <TestimonialsSection />
       </div>
     </section>
   );
