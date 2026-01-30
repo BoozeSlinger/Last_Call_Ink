@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: "By the industry, for the industry. High-end digital agency for bars & nightlife.",
 };
 
+import { LiquidCursor } from "@/components/ui/LiquidCursor";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,6 +30,7 @@ export default function RootLayout({
       <body
         className={`${interTight.variable} ${jetbrainsMono.variable} font-sans selection:bg-white selection:text-black`}
       >
+        <LiquidCursor />
         <div className="bg-grain" />
         <StickyCTA />
         {children}
