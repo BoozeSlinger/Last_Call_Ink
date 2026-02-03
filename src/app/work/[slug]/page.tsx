@@ -1,3 +1,4 @@
+"use client";
 
 import React from "react";
 import { useParams } from "next/navigation";
@@ -103,6 +104,14 @@ const projectsData: Record<string, {
   }
 };
 
+// 1. generateStaticParams (Server-Side)
+export async function generateStaticParams() {
+  return Object.keys(projectsData).map((slug) => ({
+    slug: slug,
+  }));
+}
+
+// 2. Project Page (Client Component)
 export default function ProjectPage() {
   const params = useParams();
   const slug = params?.slug as string;
@@ -258,12 +267,4 @@ export default function ProjectPage() {
       </div>
     </main>
   );
-
-// This function tells Next.js which slugs to pre-generate at build time
-export function generateStaticParams() {
-  // Return an array of all the possible slug values from projectsData
-  return Object.keys(projectsData).map((slug) => ({
-    slug: slug,
-  }));
-}
 }
