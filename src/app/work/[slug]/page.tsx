@@ -259,4 +259,12 @@ export default function ProjectPage() {
       </div>
     </main>
   );
+
+// This function tells Next.js which slugs to pre-generate at build time
+export function generateStaticParams() {
+  // Return an array of all the possible slug values from projectsData
+  return Object.keys(projectsData).map((slug) => ({
+    slug: slug,
+  }));
+}
 }
