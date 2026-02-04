@@ -6,7 +6,7 @@ import { Menu, X, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 const NAV_ITEMS = [
-  { name: "Menu", href: "#menu" },
+  { name: "Menu", href: "/menu" },
   { name: "Lounge", href: "#happening" },
   { name: "Events", href: "#happening" },
   { name: "Story", href: "#story" },
