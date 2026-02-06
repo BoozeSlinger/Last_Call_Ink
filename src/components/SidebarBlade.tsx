@@ -116,7 +116,7 @@ const SidebarBlade = () => {
               }}
               className="absolute top-6 md:top-10 right-6 md:right-10 text-matte hover:scale-110 transition-transform p-4 cursor-pointer z-[60]"
             >
-              <X size={40} md:size={80} strokeWidth={1} className="md:w-20 md:h-20 w-10 h-10" />
+              <X size={40} strokeWidth={1} className="md:w-20 md:h-20 w-10 h-10" />
             </motion.button>
 
             {/* Links */}
