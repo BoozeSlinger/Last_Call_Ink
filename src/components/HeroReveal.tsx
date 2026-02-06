@@ -22,6 +22,11 @@ const HeroReveal = () => {
   const logoScale = useTransform(smoothProgress, [0, 0.25], [1, 0.045]);
   const logoX = useTransform(smoothProgress, [0, 0.3], ["0vw", "-47vw"]);
   const logoY = useTransform(smoothProgress, [0, 0.3], ["0vh", "-37vh"]);
+  
+  // Responsive transform for landing position
+  const mobileLogoX = useTransform(smoothProgress, [0, 0.3], ["0vw", "0vw"]); // Stay centered or different landing on mobile
+  const mobileLogoY = useTransform(smoothProgress, [0, 0.3], ["0vh", "-45vh"]);
+
   const logoSplashOpacity = useTransform(smoothProgress, [0.25, 0.35], [1, 0]);
   
   // Stage 2: Background dissolve
@@ -43,13 +48,13 @@ const HeroReveal = () => {
         className="fixed inset-0 bg-matte z-40 flex items-center justify-center p-8 md:p-24"
       >
         <motion.div
+           className="relative w-full max-w-[1400px] h-[500px] md:h-[800px] will-change-transform flex items-center justify-center"
            style={{ 
              scale: logoScale, 
-             x: logoX, 
-             y: logoY,
+             x: typeof window !== "undefined" && window.innerWidth < 768 ? mobileLogoX : logoX, 
+             y: typeof window !== "undefined" && window.innerWidth < 768 ? mobileLogoY : logoY,
              opacity: logoSplashOpacity
            }}
-           className="relative w-full max-w-[1400px] h-[500px] md:h-[800px] will-change-transform"
         >
             <Image 
               src="/logo.png?v=953" 
@@ -63,7 +68,7 @@ const HeroReveal = () => {
       </motion.div>
 
       {/* The Revealed Content (Ice & Iron) */}
-      <div className="fixed inset-0 z-10 flex items-center justify-center overflow-hidden pl-[60px] md:pl-[80px]">
+      <div className="fixed inset-0 z-10 flex items-center justify-center overflow-hidden md:pl-[80px]">
         {/* The Spinning Ice Cube (Matte Moody Backdrop) */}
         <motion.div 
            style={{ scale: iceCubeScale, opacity: iceCubeOpacity }}

@@ -19,26 +19,28 @@ export default function Home() {
       <SidebarBlade />
       <HeroReveal />
       
-      {/* The Proof (Projects) */}
-      <BentoSection />
-      
-      {/* The Investigation (AI Audit) */}
-      <AIAuditSection />
-      
-      {/* House Menu (Services: Foundation + Tiers) */}
-      <ServicesSection />
+      <div className="md:pl-[80px]">
+        {/* The Proof (Projects) */}
+        <BentoSection />
+        
+        {/* The Investigation (AI Audit) */}
+        <AIAuditSection />
+        
+        {/* House Menu (Services: Foundation + Tiers) */}
+        <ServicesSection />
 
-      {/* The Receipts (Testimonial Snippets) */}
-      <TestimonialsSection />
+        {/* The Receipts (Testimonial Snippets) */}
+        <TestimonialsSection />
 
-      {/* Pull up a stool (Contact) */}
-      <ContactSection />
+        {/* Pull up a stool (Contact) */}
+        <ContactSection />
 
-      {/* Shift Notes (Blog) */}
-      <HomeBlogSection />
+        {/* Shift Notes (Blog) */}
+        <HomeBlogSection />
+      </div>
       
       {/* Footer Standard */}
-      <div className="pl-[60px] md:pl-[80px]">
+      <div className="md:pl-[80px]">
         <footer className="py-20 px-8 border-t border-charcoal bg-matte">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-4xl font-display font-black text-stark/20 uppercase tracking-tighter">

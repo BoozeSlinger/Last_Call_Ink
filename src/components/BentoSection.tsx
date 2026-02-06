@@ -47,11 +47,10 @@ const SpotlightCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`relative overflow-hidden ${className}`}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      // Standard layout transition
-      transition={{ duration: 0.5 }}
+      variants={{
+        hidden: { opacity: 0, y: 30 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+      }}
     >
       {/* Spotlight Halo */}
       <div
@@ -108,57 +107,57 @@ const BentoCard = ({ project }: { project: Project }) => (
 const BentoSection = () => {
   const projects = [
     {
-      title: "Gra Pow",
+      title: "Gra Pow Riverside",
       category: "The Foundation",
-      size: "col-span-2 row-span-2",
-      img: "/images/testimonials/grapow-thumb.png",
+      size: "md:col-span-2 md:row-span-2",
+      img: "/images/projects/grapow/thumb.png",
       href: "/work/gra-pow",
       speed: 1.1,
     },
     {
-      title: "The Standard",
-      category: "Interior Design",
+      title: "Killer Queens Social House",
+      category: "Design",
       size: "col-span-1 row-span-1",
-      img: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1000",
-      href: "/work/the-standard",
+      img: "/images/projects/killer-queens/logo.png",
+      href: "/work/killer-queens",
       speed: 1.3,
     },
     {
-        title: "Liquid Gold",
-        category: "Creative Dir.",
-        size: "col-span-1 row-span-2",
-        img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1000",
-        href: "/work/liquid-gold",
-        speed: 1.2,
+      title: "The Salted Lime",
+      category: "AEO Strategy",
+      size: "col-span-1 md:row-span-2",
+      img: "/images/projects/salted-lime/hero.png",
+      href: "/work/salted-lime",
+      speed: 1.2,
     },
     {
-      title: "Late Night",
-      category: "Strategy",
+      title: "Wolfskill",
+      category: "Content Engine",
       size: "col-span-1 row-span-1",
-      img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000",
-      href: "/work/late-night",
+      img: "/images/projects/wolfskill/hero.png",
+      href: "/work/wolfskill",
       speed: 1.4,
     },
     {
-      title: "Velvet Rope",
-      category: "Web Design",
+      title: "Proabition",
+      category: "CRM & Auto",
       size: "col-span-1 row-span-1",
-      img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000",
-      href: "/work/velvet-rope",
+      img: "/images/projects/proabition/hero.png",
+      href: "/work/proabition",
       speed: 1.25,
     },
     {
-      title: "Copper Still",
+      title: "Barrel and Stave Brewing",
       category: "Branding",
       size: "col-span-1 row-span-1",
-      img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1000",
-      href: "/work/copper-still",
+      img: "/images/projects/barrel-and-stave/chingon.png",
+      href: "/work/barrel-and-stave",
       speed: 1.35,
     },
   ];
 
   return (
-    <section id="projects" className="bg-matte/10 backdrop-blur-xs py-20 md:py-32 pl-[80px] md:pl-24 pr-4 md:pr-24 lg:px-48 relative z-20">
+    <section id="projects" className="bg-matte/10 backdrop-blur-xs py-20 md:py-32 px-6 md:pl-32 md:pr-12 lg:px-48 relative z-20">
       <div className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end gap-8 border-t border-charcoal pt-12">
         <div>
           <h2 className="text-4xl md:text-8xl font-display font-black text-stark uppercase tracking-tighter leading-none">
@@ -170,11 +169,25 @@ const BentoSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[400px]">
+      <motion.div 
+        variants={{
+          hidden: { opacity: 0 },
+          show: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.15
+            }
+          }
+        }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[400px]"
+      >
         {projects.map((project) => (
           <BentoCard key={project.title} project={project} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { X } from "lucide-react";
+import { X, Menu } from "lucide-react";
 
 const SidebarBlade = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,18 +21,18 @@ const SidebarBlade = () => {
 
   return (
     <>
-      {/* The Blade */}
+      {/* Desktop Blade (Hidden on Mobile) */}
       <motion.button
         initial={{ x: -100 }}
         animate={{ x: 0 }}
         aria-label="Open Menu"
-        className="fixed left-0 top-0 h-full w-[60px] md:w-[80px] bg-matte border-r border-charcoal z-50 cursor-pointer flex flex-col items-center py-6 md:py-10 transition-all duration-300 hover:bg-charcoal/80"
+        className="fixed left-0 top-0 h-full w-[80px] bg-matte border-r border-charcoal z-50 cursor-pointer flex-col items-center py-10 transition-all duration-300 hover:bg-charcoal/80 hidden md:flex"
         onClick={() => setIsOpen(true)}
       >
-        {/* New Circular Badge (Authority Seal) */}
+        {/* Authority Seal */}
         <motion.div 
             whileHover={{ rotate: 15, scale: 1.1 }}
-            className="relative h-10 w-10 md:h-14 md:w-14 mb-8 grayscale invert opacity-90 brightness-125 transition-all duration-500"
+            className="relative h-14 w-14 mb-8 grayscale invert opacity-90 brightness-125 transition-all duration-500"
         >
           <Image
             src="/badge.png"
@@ -43,16 +43,16 @@ const SidebarBlade = () => {
           />
         </motion.div>
 
-        <div className="h-[60px] md:h-[100px] flex items-center justify-center mb-8">
-            <div className="-rotate-90 whitespace-nowrap text-stark/60 font-mono text-xs md:text-xs tracking-[0.5em] uppercase pointer-events-none">
+        <div className="h-[100px] flex items-center justify-center mb-8">
+            <div className="-rotate-90 whitespace-nowrap text-stark/60 font-mono text-xs tracking-[0.5em] uppercase pointer-events-none">
                 [ Menu ]
             </div>
         </div>
 
-        {/* Updated Logo (Coupe Glass) - Now fades in as the splash 'lands' */}
+        {/* Updated Logo (Coupe Glass) */}
         <motion.div 
             style={{ opacity: logoOpacity }}
-            className="relative h-12 md:h-16 w-12 md:w-16 grayscale opacity-80 brightness-150 pointer-events-none"
+            className="relative h-16 w-16 grayscale opacity-80 brightness-150 pointer-events-none"
         >
           <Image
             src="/logo.png?v=953"
@@ -63,6 +63,17 @@ const SidebarBlade = () => {
             className="object-contain"
           />
         </motion.div>
+      </motion.button>
+
+      {/* Mobile Burger (Hidden on Desktop) */}
+      <motion.button
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        aria-label="Open Menu"
+        onClick={() => setIsOpen(true)}
+        className="fixed top-6 right-6 z-50 w-14 h-14 bg-matte border border-charcoal flex items-center justify-center text-stark md:hidden hover:bg-charcoal transition-colors"
+      >
+        <Menu size={24} />
       </motion.button>
 
       {/* The Vault (Menu Overlay) */}
@@ -76,7 +87,7 @@ const SidebarBlade = () => {
             className="fixed inset-0 z-50 bg-bone flex flex-col justify-center px-12 md:px-32 lg:px-64 overflow-hidden"
             style={{ 
                 backgroundImage: "url('https://www.transparenttextures.com/patterns/fiber-paper.png')",
-                width: "95%"
+                width: "100%"
             }}
           >
             {/* Background Watermark Badge */}
@@ -84,7 +95,7 @@ const SidebarBlade = () => {
                initial={{ opacity: 0, scale: 0.8, rotate: -20 }}
                animate={{ opacity: 0.03, scale: 1, rotate: 0 }}
                transition={{ duration: 1.5, ease: "easeOut" }}
-               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vh] pointer-events-none"
+               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] md:w-[120vw] h-[150vh] md:h-[120vh] pointer-events-none"
             >
                 <Image 
                     src="/badge.png" 
@@ -93,6 +104,7 @@ const SidebarBlade = () => {
                     className="object-contain grayscale"
                 />
             </motion.div>
+            
             {/* Close Button */}
             <motion.button
               initial={{ opacity: 0, rotate: -90 }}
@@ -102,13 +114,13 @@ const SidebarBlade = () => {
                 e.stopPropagation();
                 setIsOpen(false);
               }}
-              className="absolute top-10 right-10 text-matte hover:scale-110 transition-transform p-4 cursor-pointer"
+              className="absolute top-6 md:top-10 right-6 md:right-10 text-matte hover:scale-110 transition-transform p-4 cursor-pointer z-[60]"
             >
-              <X size={80} strokeWidth={1} />
+              <X size={40} md:size={80} strokeWidth={1} className="md:w-20 md:h-20 w-10 h-10" />
             </motion.button>
 
             {/* Links */}
-            <nav className="flex flex-col gap-4 md:gap-8">
+            <nav className="flex flex-col gap-6 md:gap-8 relative z-10 transition-all">
               {navLinks.map((link, idx) => (
                 <motion.a
                   key={link.name}
@@ -117,7 +129,8 @@ const SidebarBlade = () => {
                   animate={{ opacity: 1, y: 0, x: link.stagger }}
                   transition={{ delay: 0.3 + idx * 0.1 }}
                   whileHover={{ x: link.stagger + 20, color: "#1A1A1A" }}
-                  className="text-4xl md:text-7xl lg:text-8xl font-display font-black text-matte/20 uppercase tracking-tighter leading-none hover:text-reveal transition-all"
+                  onClick={() => setIsOpen(false)}
+                  className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black text-matte/20 uppercase tracking-tighter leading-none hover:text-matte active:text-matte transition-all"
                   style={{ 
                     fontFamily: "var(--font-inter-tight)",
                   }}
@@ -127,7 +140,7 @@ const SidebarBlade = () => {
               ))}
             </nav>
 
-            <div className="absolute bottom-10 left-32 md:left-64 flex gap-12 font-mono text-[10px] tracking-widest text-matte/40 uppercase">
+            <div className="absolute bottom-10 left-12 md:left-64 flex flex-col md:flex-row gap-4 md:gap-12 font-mono text-[8px] md:text-[10px] tracking-widest text-matte/40 uppercase">
                 <div>EST. 2024</div>
                 <div>Last Call Collective</div>
                 <div>By the Industry</div>
@@ -140,3 +153,4 @@ const SidebarBlade = () => {
 };
 
 export default SidebarBlade;
+
