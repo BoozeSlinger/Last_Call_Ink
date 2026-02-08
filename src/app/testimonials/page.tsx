@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import SidebarBlade from "@/components/SidebarBlade";
 
 const TestimonialsPage = () => {
@@ -54,6 +55,17 @@ const TestimonialsPage = () => {
       <div className="pl-[60px] md:pl-[80px]">
         {/* Header Section */}
         <section className="pt-32 pb-12 px-8 md:px-24">
+          {/* Home Button */}
+          <Link 
+            href="/" 
+            className="inline-flex items-center gap-2 mb-12 font-mono text-[10px] tracking-widest uppercase text-matte/60 hover:text-amber-600 transition-colors group"
+          >
+            <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            Back to Home
+          </Link>
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import SidebarBlade from "@/components/SidebarBlade";
 
 export default function ContactPage() {
@@ -38,6 +39,17 @@ export default function ContactPage() {
         {/* Left Side: Branding/Intro */}
         <section className="w-full lg:w-2/5 p-8 md:p-16 lg:p-24 flex flex-col justify-between bg-matte text-bone border-r border-charcoal/20">
           <div>
+            {/* Home Button */}
+            <Link 
+              href="/" 
+              className="inline-flex items-center gap-2 mb-8 font-mono text-[10px] tracking-widest uppercase text-bone/60 hover:text-amber-500 transition-colors group"
+            >
+              <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Back to Home
+            </Link>
+            
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

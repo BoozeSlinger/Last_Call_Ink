@@ -19,7 +19,7 @@ export default function BlogIndex() {
     },
     {
       slug: "invisible-bar",
-      title: "Why Your Bar is Invisible (Even if You’re on Page One)",
+      title: "Why Your Bar is Invisible (Even if You're on Page One)",
       excerpt: "If the AI doesn't know your happy hour specials, do they even exist? The game has changed from clicks to answers.",
       date: "SHIFT NOTE #001",
       category: "THEORY",
@@ -34,6 +34,17 @@ export default function BlogIndex() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-32 md:py-48">
         {/* Header */}
         <header className="mb-24">
+          {/* Home Button */}
+          <Link 
+            href="/" 
+            className="inline-flex items-center gap-2 mb-12 font-mono text-[10px] tracking-widest uppercase text-matte/60 hover:text-amber-600 transition-colors group"
+          >
+            <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            Back to Home
+          </Link>
+          
           <h1 className="text-8xl md:text-[8rem] lg:text-[10rem] font-display font-black tracking-tighter leading-[0.8] mb-8 uppercase text-matte">
             Shift <br /> Notes
           </h1>

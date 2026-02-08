@@ -53,3 +53,24 @@ body {
     @apply antialiased;
   }
 }
+
+/* Shimmer Animation for Project Card Hover */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Hide Scrollbar for Gallery */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+

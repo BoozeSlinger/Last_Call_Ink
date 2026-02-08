@@ -45,7 +45,7 @@ const HeroReveal = () => {
       {/* The Matte Splash (Matching the brand depth) */}
       <motion.div 
         style={{ opacity: splashOpacity }}
-        className="fixed inset-0 bg-matte z-40 flex items-center justify-center p-8 md:p-24"
+        className="fixed inset-0 bg-matte z-40 flex items-center justify-center p-8 md:p-24 pointer-events-none"
       >
         <motion.div
            className="relative w-full max-w-[1400px] h-[500px] md:h-[800px] will-change-transform flex items-center justify-center"

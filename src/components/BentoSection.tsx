@@ -3,13 +3,15 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Project {
   title: string;
   category: string;
   size: string;
   img: string;
-  href?: string;
+  hoverImg?: string;
+  href: string;
   speed: number;
 }
 
@@ -66,68 +68,97 @@ const SpotlightCard = ({
 };
 
 const BentoCard = ({ project }: { project: Project }) => (
-  <SpotlightCard
-    className={`${project.size} relative group border border-charcoal/50 hover:border-amber-500/50 transition-colors cursor-pointer bg-charcoal`}
-  >
-     {/* Image Container with Zoom Effect */}
-    <motion.div
-       className="relative w-full h-full z-10"
+  <Link href={project.href} className={`${project.size} block`}>
+    <SpotlightCard
+      className="relative w-full h-full group border border-charcoal/50 hover:border-amber-500/50 transition-all duration-700 cursor-pointer bg-charcoal overflow-hidden transform-gpu"
     >
+      {/* Animated Neon Border */}
+      <div className="absolute inset-0 z-30 pointer-events-none">
+        <div className="absolute inset-0 border-[3px] border-amber-500/0 group-hover:border-amber-500/40 transition-all duration-500" />
+        <div className="absolute inset-0 border-[3px] border-amber-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-700 blur-[4px]" />
+      </div>
+      
+      {/* Color Sweep Overlay Effect */}
+      <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-r from-amber-500/0 via-amber-500/20 to-amber-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 group-hover:animate-[shimmer_2s_ease-in-out_infinite]" />
+      
+      {/* Image Container with Zoom & Color Reveal Effect */}
+      <div className="relative w-full h-full z-10 transition-transform duration-700 ease-out group-hover:scale-110">
+        {/* Primary Image - Grayscale to Vivid Color on Hover */}
         <Image
           src={project.img}
-          alt={`Project: ${project.title}`}
+          alt={`${project.title} - ${project.category} Case Study | Last Call Collective Portfolio`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+          className={`object-cover transition-all duration-500 ease-out
+            grayscale opacity-50 brightness-75 contrast-90
+            group-hover:grayscale-0 group-hover:opacity-100 group-hover:brightness-110 group-hover:contrast-100 group-hover:saturate-125
+            ${project.hoverImg ? "group-hover:opacity-0" : ""}`}
         />
-        
-        {/* Dark Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-matte via-matte/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-    </motion.div>
 
-    <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 relative z-20">
-      <div>
-        <span className="font-mono text-[10px] tracking-widest text-amber-500 uppercase block mb-2 opacity-80 group-hover:opacity-100 transition-opacity">
-          {project.category}
-        </span>
-        <h3 className="text-3xl font-display font-black text-stark uppercase tracking-tighter drop-shadow-lg group-hover:text-white transition-colors">
-          {project.title}
-        </h3>
+        {/* Hover Reveal Image (if available) */}
+        {project.hoverImg && (
+          <Image
+            src={project.hoverImg}
+            alt={`${project.title} Project Detail - ${project.category} Work by Last Call Collective`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out saturate-125 brightness-110 contrast-100"
+          />
+        )}
+        
+        {/* Dynamic Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-matte via-matte/30 to-transparent opacity-80 group-hover:opacity-30 transition-opacity duration-500" />
       </div>
-      <motion.div 
-        whileHover={{ rotate: 45, scale: 1.1 }}
-        className="w-12 h-12 rounded-full border border-stark/20 flex items-center justify-center text-stark bg-white/5 backdrop-blur-sm hover:bg-amber-500 hover:border-amber-500 hover:text-matte transition-all duration-300 shadow-xl"
-      >
+
+      <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 z-40">
+        <div className="drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+          <span className="font-mono text-[10px] tracking-widest text-amber-500 uppercase block mb-2 opacity-80 group-hover:opacity-100 transition-opacity font-bold">
+            {project.category}
+          </span>
+          <h3 className="text-3xl font-display font-black text-stark uppercase tracking-tighter group-hover:text-white transition-colors">
+            {project.title}
+          </h3>
+        </div>
+        <motion.div 
+          whileHover={{ rotate: 135, scale: 1.2 }}
+          className="w-12 h-12 rounded-full border border-stark/20 flex items-center justify-center text-stark bg-white/5 backdrop-blur-md hover:bg-amber-500 hover:border-amber-500 hover:text-matte transition-all duration-500 shadow-2xl group-hover:shadow-amber-500/20"
+        >
           <span className="text-xl">↗</span>
-      </motion.div>
-    </div>
-  </SpotlightCard>
+        </motion.div>
+      </div>
+
+      {/* Subtle Scanline Effect - Neon Retro feel */}
+      <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity duration-700 z-35 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[size:100%_4px]" />
+    </SpotlightCard>
+  </Link>
 );
 
 const BentoSection = () => {
-  const projects = [
+  const projects: Project[] = [
     {
       title: "Gra Pow Riverside",
-      category: "The Foundation",
+      category: "The Foundation + On Call",
       size: "md:col-span-2 md:row-span-2",
-      img: "/images/projects/grapow/thumb.png",
+      img: "/images/projects/grapow/gra-pow-riverside-thai-restaurant-bar-hero.jpg",
+      hoverImg: "/images/projects/grapow/gra-pow-website-chatbot-receptionist.jpg",
       href: "/work/gra-pow",
       speed: 1.1,
     },
     {
       title: "Killer Queens Social House",
-      category: "Design",
+      category: "Design + Marketing",
       size: "col-span-1 row-span-1",
-      img: "/images/projects/killer-queens/logo.png",
+      img: "/images/projects/killer-queens/killerslogo.jpeg",
+      hoverImg: "/images/projects/killer-queens/killers.jpeg",
       href: "/work/killer-queens",
       speed: 1.3,
     },
     {
-      title: "The Salted Lime",
-      category: "AEO Strategy",
+      title: "Happy Dad Hard Seltzer",
+      category: "Local Marketing",
       size: "col-span-1 md:row-span-2",
-      img: "/images/projects/salted-lime/hero.png",
-      href: "/work/salted-lime",
+      img: "/images/projects/happy-dad/placeholder-1.svg",
+      href: "/work/happy-dad",
       speed: 1.2,
     },
     {
@@ -140,7 +171,7 @@ const BentoSection = () => {
     },
     {
       title: "Proabition",
-      category: "CRM & Auto",
+      category: "CRM & Automation",
       size: "col-span-1 row-span-1",
       img: "/images/projects/proabition/hero.png",
       href: "/work/proabition",
@@ -148,7 +179,7 @@ const BentoSection = () => {
     },
     {
       title: "Barrel and Stave Brewing",
-      category: "Branding",
+      category: "Branding & Design",
       size: "col-span-1 row-span-1",
       img: "/images/projects/barrel-and-stave/chingon.png",
       href: "/work/barrel-and-stave",

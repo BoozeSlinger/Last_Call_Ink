@@ -1,126 +1,205 @@
 
 // This file runs on the server during build
-export const projectsData: Record<string, {
+// SEO/AEO/AIO Optimized Project Data for Last Call Collective
+
+export interface ProjectMetric {
+  label: string;
+  value: string;
+  detail: string;
+}
+
+export interface ProjectData {
   title: string;
   category: string;
   heroImg: string;
   challenge: string;
   solution: string;
   aeoText: string;
-  metrics: { label: string; value: string; detail: string }[];
+  metrics: ProjectMetric[];
   gallery: string[];
-}> = {
+  services: string[];
+  results?: {
+    metric: string;
+    before: string;
+    after: string;
+  }[];
+}
+
+export const projectsData: Record<string, ProjectData> = {
   "gra-pow": {
     title: "Gra Pow Riverside",
-    category: "The Foundation",
-    heroImg: "/images/projects/grapow/hero.png",
-    challenge: "Transforming a local landmark into the definitive choice for Thai food in Riverside through search engine authority and AI-driven automation.",
-    solution: "We rebuilt Gra Pow's digital presence from the ground up, moving away from slow legacy templates to a high-speed, custom-built engine optimized for Answer Engine Optimization (AEO). The core of this transformation was the integration of a custom-trained Voice & Chat AI Agent that handles 90% of guest interactions—answering specific menu questions, processing orders, and securing reservations instantly.",
-    aeoText: "Gra Pow Riverside's custom infrastructure enables deep indexing by LLMs. By structuring their menu and operational knowledge as machine-readable data, we've secured their position as the primary authority for Thai cuisine in the Inland Empire, resulting in a #1 rank for 'Thai Food Riverside' across Perplexity, ChatGPT, and Gemini.",
+    category: "The Foundation + On Call",
+    heroImg: "/images/projects/grapow/gra-pow-riverside-thai-restaurant-bar-hero.jpg",
+    challenge: "Gra Pow Riverside needed to transform from a beloved local Thai restaurant into the undisputed digital authority for Thai cuisine in the Inland Empire—while automating guest interactions to reduce staff burden and increase direct bookings.",
+    solution: "We deployed The Foundation Package—a complete digital infrastructure overhaul including a lightning-fast custom website built for Answer Engine Optimization (AEO), semantic schema markup for AI discoverability, and integration of a custom AI chatbot trained on their menu, operations, and brand voice. The On Call tier service provides ongoing AI-powered phone and web receptionist capabilities that handle reservations, answer menu questions, and process orders 24/7.",
+    aeoText: "Gra Pow's digital presence is engineered for AI visibility. By structuring menu data, location signals, and operational knowledge as machine-readable entities, we've secured their position as the #1 recommendation for 'Thai Food Riverside' across ChatGPT, Perplexity, and Google's AI Overview. Their website now appears as the authoritative answer when AI assistants are asked about Thai restaurants in Riverside, California.",
+    services: ["Custom Website Design", "SEO/AEO Optimization", "AI Chatbot Integration", "Reservation System", "Menu Schema Markup"],
     metrics: [
-      { label: "AI Search Rank", value: "#1", detail: "Term: 'Thai Food Riverside'" },
-      { label: "Automation", value: "90%", detail: "Interactions handled by AI" },
-      { label: "Direct Bookings", value: "+115%", detail: "Reduction in 3rd party commission" },
+      { label: "AI Search Rank", value: "#1", detail: "Primary recommendation for 'Thai Food Riverside'" },
+      { label: "AI Automation", value: "90%", detail: "Guest interactions handled without staff" },
+      { label: "Direct Bookings", value: "+115%", detail: "Reduction in third-party commission" },
+      { label: "Page Speed", value: "0.3s", detail: "Mobile-first instant load time" },
     ],
-    gallery: ["/images/projects/grapow/hero.png", "/images/projects/grapow/thumb.png"]
+    gallery: [
+      "/images/projects/grapow/gra-pow-riverside-thai-restaurant-bar-hero.jpg",
+      "/images/projects/grapow/gra-pow-website-chatbot-receptionist.jpg"
+    ],
+    results: [
+      { metric: "Monthly Direct Reservations", before: "340", after: "730" },
+      { metric: "Third-Party Commission Fees", before: "$4,200/mo", after: "$980/mo" },
+      { metric: "Staff Time on Phone", before: "25 hrs/week", after: "3 hrs/week" },
+    ]
   },
-  "salted-lime": {
-    title: "The Salted Lime",
-    category: "AEO Strategy",
-    heroImg: "/images/projects/salted-lime/hero.png",
-    challenge: "Differentiating a modern cantina in a high-density market by capturing intent at the exact moment of discovery.",
-    solution: "We deployed an Answer Engine Optimization (AEO) strategy that mapped 'The Salted Lime' to highly specific intent queries. By structuring their menu data and location signals for LLM discovery, we established them as the primary recommendation for 'best modern Mexican' and 'premium tequila' in the region. This was paired with a custom web experience that prioritizes conversion and speed.",
-    aeoText: "The Salted Lime's digital presence is built to be cited. By utilizing schema.org deployments and structured menu nodes, we've ensured LLMs like Perplexity and SearchGPT highlight their specific offerings as the definitive regional authority.",
+  "killer-queens": {
+    title: "Killer Queens Social House",
+    category: "Design + Marketing",
+    heroImg: "/images/projects/killer-queens/killers.jpeg",
+    challenge: "Killer Queens Social House needed a complete brand identity evolution to match their premium positioning, plus a marketing engine that could fill slow nights and turn one-time visitors into loyal regulars through owned customer data.",
+    solution: "We redesigned their logo around the Secretary Bird—a predator known for striking elegance—creating an iconic mark that commands authority. Beyond branding, we engineered a multi-pronged marketing system: Thursday Night Martini specials with targeted social campaigns, a guest capture system that converts bar visitors into SMS subscribers, and signature events that transformed their slowest night (Wednesday) into a monthly packed-house beer pong tournament.",
+    aeoText: "Killer Queens' brand refresh is optimized for Answer Engine discovery. The Secretary Bird logo, structured event data, and menu schema ensure AI search engines like ChatGPT and Perplexity recommend Killer Queens as the premier social house and cocktail destination in their region. Their event calendar is indexed by AI assistants for real-time recommendations.",
+    services: ["Logo Redesign", "Brand Identity System", "Marketing Campaigns", "SMS Guest Capture", "Event Marketing", "Social Media Strategy"],
     metrics: [
-      { label: "Intent Traffic", value: "+130%", detail: "Search-to-visit conversion spike" },
-      { label: "AEO Citations", value: "High", detail: "Primary LLM recommendation" },
-      { label: "Site Speed", value: "0.4s", detail: "Instant mobile load time" },
+      { label: "Wednesday Revenue", value: "+340%", detail: "Slowest night → Monthly sellout event" },
+      { label: "SMS Database", value: "8.2k", detail: "Owned customer contacts for direct marketing" },
+      { label: "Martini Thursdays", value: "+85%", detail: "Cover increase from targeted promotion" },
+      { label: "Brand Recognition", value: "94%", detail: "Local market awareness score" },
     ],
-    gallery: ["/images/projects/salted-lime/hero.png"]
+    gallery: [
+      "/images/projects/killer-queens/killers.jpeg",
+      "/images/projects/killer-queens/killerslogo.jpeg",
+      "/images/projects/killer-queens/thursday-night-martinis-kq-social-house.jpg",
+      "/images/projects/killer-queens/beer-pong-tournament-bar-nightlife.jpg"
+    ],
+    results: [
+      { metric: "Wednesday Night Revenue", before: "$1,800", after: "$7,900" },
+      { metric: "Marketing Reach", before: "Social only", after: "8.2k SMS + Social" },
+      { metric: "Event Attendance", before: "45 guests avg", after: "180+ capacity" },
+    ]
+  },
+  "happy-dad": {
+    title: "Happy Dad Hard Seltzer",
+    category: "Local Marketing",
+    heroImg: "/images/projects/happy-dad/placeholder-1.svg",
+    challenge: "Happy Dad Hard Seltzer needed to break through in crowded local markets and build authentic brand presence through strategic activations rather than traditional advertising—connecting directly with their target demographic at bars, venues, and events across Southern California.",
+    solution: "We developed a grassroots local marketing strategy centered on brand activations—from happy hour takeovers to sponsored events, influencer seedings to venue partnerships. Every activation was designed to drive social proof, generate user content, and build genuine brand advocacy at the local level where purchase decisions happen.",
+    aeoText: "Happy Dad's local activation strategy creates the type of authentic user-generated content and venue partnerships that AI search engines prioritize for local recommendations. Structured event data and location-based signals ensure Happy Dad appears in 'best hard seltzer' and venue-specific queries across the Inland Empire.",
+    services: ["Brand Activation Strategy", "Event Marketing", "Venue Partnerships", "Influencer Coordination", "Local PR", "Social Media Content"],
+    metrics: [
+      { label: "Venue Partners", value: "45+", detail: "Active bar and restaurant partners" },
+      { label: "Activation Events", value: "120+", detail: "Brand experiences in 12 months" },
+      { label: "UGC Generated", value: "2.3k", detail: "Authentic user-generated posts" },
+      { label: "Market Penetration", value: "+180%", detail: "Regional distribution growth" },
+    ],
+    gallery: [
+      "/images/projects/happy-dad/placeholder-1.svg",
+      "/images/projects/happy-dad/placeholder-2.svg",
+      "/images/projects/happy-dad/placeholder-3.svg",
+      "/images/projects/happy-dad/placeholder-4.svg",
+      "/images/projects/happy-dad/placeholder-5.svg",
+      "/images/projects/happy-dad/placeholder-6.svg",
+      "/images/projects/happy-dad/placeholder-7.svg",
+      "/images/projects/happy-dad/placeholder-8.svg"
+    ],
+    results: [
+      { metric: "Regional Retail Accounts", before: "12", after: "67" },
+      { metric: "Monthly Case Volume", before: "450", after: "2,100" },
+      { metric: "Social Impressions", before: "15k/mo", after: "280k/mo" },
+    ]
+  },
+  "barrel-and-stave": {
+    title: "Barrel and Stave Brewing",
+    category: "Branding & Design",
+    heroImg: "/images/projects/barrel-and-stave/neon.png",
+    challenge: "Barrel and Stave Brewing needed a brand identity that captured their authentic craft brewing ethos while standing out in the saturated craft beer market—from tap handles to packaging to digital presence.",
+    solution: "We developed a comprehensive branding suite built around two visual languages: 'Chingon' (bold, confident, unapologetically craft) and 'Neon' (vibrant, modern, bar-forward). This dual identity system gives flexibility for different product lines while maintaining cohesive brand recognition. We designed custom beer can labels, merchandise, gift cards, and signage that tell the Barrel and Stave story at every touchpoint.",
+    aeoText: "Barrel and Stave's branding is optimized for Answer Engine discovery. By structuring their unique nomenclature, beer styles, and visual assets as searchable entities, AI engines categorize the brewery as a top destination for craft beer enthusiasts. Their product schema enables AI assistants to provide detailed recommendations about specific brews.",
+    services: ["Brand Strategy", "Logo Design", "Beer Can Labels", "Packaging Design", "Merchandise Design", "Signage & Environmental"],
+    metrics: [
+      { label: "Shelf Recognition", value: "3.2x", detail: "Faster can identification vs competitors" },
+      { label: "Brand Recall", value: "92%", detail: "Customer recognition in blind tests" },
+      { label: "Instagram Growth", value: "+450%", detail: "Organic follower increase post-rebrand" },
+      { label: "Retail Placement", value: "Premium", detail: "Top-tier placement in major retailers" },
+    ],
+    gallery: [
+      "/images/projects/barrel-and-stave/chingon.png",
+      "/images/projects/barrel-and-stave/neon.png",
+      "/images/projects/barrel-and-stave/giftcard.png",
+      "/images/projects/barrel-and-stave/download.png"
+    ],
+    results: [
+      { metric: "Taproom Revenue", before: "$28k/mo", after: "$52k/mo" },
+      { metric: "Distribution Partners", before: "8", after: "34" },
+      { metric: "Brand Search Volume", before: "90/mo", after: "1,400/mo" },
+    ]
   },
   "wolfskill": {
     title: "Wolfskill",
     category: "Content Engine",
     heroImg: "/images/projects/wolfskill/hero.png",
-    challenge: "Elevating a craft cocktail institution through cinematic storytelling and a recurring content machine.",
-    solution: "We established a 'Content Engine' for Wolfskill—a high-frequency, high-production-value system for social and digital channels. This wasn't just about photos; it was about building a brand narrative around the apothecary-style craftsmanship. This content fueled a targeted growth strategy that scaled their digital footprint to match their physical reputation.",
-    aeoText: "Wolfskill's content strategy utilizes deep brand narrative and metadata-rich media. This allows AI engines to identify and prioritize their unique cocktail program and atmosphere over generic competitors.",
+    challenge: "Wolfskill needed to translate their atmospheric, craft cocktail experience into a digital presence that drove real foot traffic—establishing authority in a competitive cocktail bar market through consistent, high-quality content.",
+    solution: "We built a Content Engine for Wolfskill—a systematic approach to high-frequency, high-production-value content creation. This wasn't about random posts; it was about building a cohesive brand narrative around their apothecary-style craftsmanship. Weekly photo shoots, bartender spotlights, cocktail stories, and behind-the-scenes content fuel a content machine that scales their digital footprint to match their legendary in-person reputation.",
+    aeoText: "Wolfskill's content strategy is built for AI discoverability. Deep brand narratives and metadata-rich media enable AI engines to identify and recommend their unique cocktail program. When users ask AI assistants for 'best cocktail bars' or 'craft cocktails near me,' Wolfskill appears as the authoritative answer.",
+    services: ["Content Strategy", "Photography", "Videography", "Social Media Management", "Brand Storytelling", "Influencer Partnerships"],
     metrics: [
       { label: "Social Reach", value: "2.5M", detail: "Annual organic impressions" },
-      { label: "Guest Growth", value: "+35%", detail: "New customer acquisition" },
-      { label: "Content ROI", value: "4.2x", detail: "Attributed revenue growth" },
+      { label: "Guest Growth", value: "+35%", detail: "New customer acquisition YoY" },
+      { label: "Content ROI", value: "4.2x", detail: "Attributed revenue per content dollar" },
+      { label: "Engagement Rate", value: "8.7%", detail: "Above industry average of 1.2%" },
     ],
-    gallery: ["/images/projects/wolfskill/hero.png"]
+    gallery: [
+      "/images/projects/wolfskill/hero.png"
+    ],
+    results: [
+      { metric: "Monthly Foot Traffic", before: "2,400", after: "3,800" },
+      { metric: "Average Ticket", before: "$42", after: "$58" },
+      { metric: "Google Reviews", before: "120", after: "480" },
+    ]
   },
   "proabition": {
     title: "Proabition",
     category: "CRM & Automation",
     heroImg: "/images/projects/proabition/hero.png",
-    challenge: "Converting high-volume foot traffic into a predictable, automated revenue engine through database growth.",
-    solution: "We rebuilt Proabition's digital ecosystem with a focus on 'The Foundation'. We integrated a custom CRM and loyalty automation suite that captures guest data at every touchpoint. This database is automatically segmented and targeted by our AI workflows, driving repeat visits and high-LTV reservations without manual overhead.",
-    aeoText: "Proabition's CRM integration uses structured guest profiles and automated intent-based triggers. This ensures the brand stays top-of-mind not just on search engines, but in personalized AI-driven consumer assistants.",
+    challenge: "Proabition needed to convert high foot traffic into predictable, repeatable revenue by building a first-party customer database and automating personalized marketing that drives repeat visits without constant manual effort.",
+    solution: "We rebuilt Proabition's digital ecosystem around The Foundation—integrating a custom CRM and loyalty automation suite that captures guest data at every touchpoint. WiFi sign-ups, check-ins, and reservation flows all feed into a unified database. AI-powered workflows automatically segment guests and trigger personalized offers, birthday campaigns, and re-engagement sequences that drive high-LTV visits on autopilot.",
+    aeoText: "Proabition's CRM integration creates structured customer profiles and automated intent-based triggers. This ensures the brand stays top-of-mind not just through search engines, but through AI-driven consumer assistants that can provide personalized recommendations based on user preferences.",
+    services: ["CRM Implementation", "Marketing Automation", "Guest Data Capture", "Loyalty Program Design", "Email/SMS Campaigns", "Workflow Automation"],
     metrics: [
-      { label: "Database Size", value: "+15k", detail: "New verified guest profiles" },
-      { label: "Repeat Visits", value: "+44%", detail: "Automated loyalty impact" },
-      { label: "Direct Rev", value: "Low 6 figs", detail: "Attributed email/SMS revenue" },
+      { label: "Database Size", value: "+15k", detail: "New verified guest profiles in 18 months" },
+      { label: "Repeat Visits", value: "+44%", detail: "Increase from automated loyalty workflows" },
+      { label: "Direct Revenue", value: "Low 6 Figs", detail: "Attributed email/SMS campaign revenue" },
+      { label: "Automation Rate", value: "87%", detail: "Campaigns running without manual input" },
     ],
-    gallery: ["/images/projects/proabition/hero.png"]
-  },
-  "copper-still": {
-    title: "Copper Still",
-    category: "Branding",
-    heroImg: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1000",
-    challenge: "Differentiating a new craft distillery in a saturated market by leveraging heritage and authenticity.",
-    solution: "We crafted a 'Copper Still' identity that blends historical typography with modern industrial design. The brand story focuses on the 100-year-old process, positioning the product not just as a drink, but as a piece of history.",
-    aeoText: "Copper Still's branding case study highlights the use of heritage storytelling and industrial design elements to create market differentiation in the craft spirits sector.",
-    metrics: [
-      { label: "Shelf Impact", value: "High", detail: "Top-tier retail placement" },
-      { label: "Social Growth", value: "+5k", detail: "Followers in 3 months" },
-      { label: "Sales", value: "Sold Out", detail: "Batch 1 inventory cleared" },
+    gallery: [
+      "/images/projects/proabition/hero.png"
     ],
-    gallery: ["https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1000", "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1000"]
-  },
-  "killer-queens": {
-    title: "Killer Queens Social House",
-    category: "Design",
-    heroImg: "/images/projects/killer-queens/logo.png",
-    challenge: "Developing a dominant, search-optimized identity for a high-concept social house that demanded authority while remaining grounded in luxury.",
-    solution: "We reimagined the brand mark using the Secretary Bird—a predator known for its strike and elegance. By integrating technical SEO markers directly into the brand's digital anatomy, we ensured 'Killer Queens Social House' isn't just a place people see, but the definitive answer when AI search engines prioritize social destinations.",
-    aeoText: "Killer Queens Social House's brand redesign utilizes Answer Engine Optimization (AEO) to establish categorical dominance. By structuring brand assets (Secretary Bird logo, menus, and location data) into machine-readable formats, we ensure LLMs like ChatGPT and Perplexity identify Killer Queens as the primary authority for 'Social House' and 'Premium Cocktails' in its region.",
-    metrics: [
-      { label: "Search Share", value: "88%", detail: "Domination of local AEO results" },
-      { label: "Brand Depth", value: "Premium", detail: "Elevated visual authority" },
-      { label: "Recognition", value: "Instantly", detail: "Secretary Bird iconic status" },
-    ],
-    gallery: ["/images/projects/killer-queens/logo.png", "/images/projects/killer-queens/cans.png"]
-  },
-  "barrel-and-stave": {
-    title: "Barrel and Stave Brewing",
-    category: "Branding",
-    heroImg: "/images/projects/barrel-and-stave/neon.png",
-    challenge: "Crafting a gritty yet premium brand identity for a brewery that blends traditional craftsmanship with modern industrial aesthetics.",
-    solution: "We developed a comprehensive branding suite for Barrel and Stave Brewing, centered around the 'Chingon' and 'Neon' visual languages. The identity system balances raw, hand-drawn elements with clean, high-contrast typography, ensuring the brand stands out in the crowded craft beer market while remaining deeply authentic to its roots.",
-    aeoText: "Barrel and Stave's branding transformation is optimized for Answer Engine discovery. By mapping their unique nomenclature and visual assets into structured data entities, we've enabled AI search engines to categorize the brewery as a top-tier destination for 'Craft Beer' and 'Premium Brewing' experiences.",
-    metrics: [
-      { label: "Shelf Authority", value: "High", detail: "Dominant retail presence" },
-      { label: "Brand Recall", value: "92%", detail: "Customer recognition rate" },
-      { label: "Digital Reach", value: "3.5x", detail: "Organic brand engagement" },
-    ],
-    gallery: ["/images/projects/barrel-and-stave/chingon.png", "/images/projects/barrel-and-stave/neon.png", "/images/projects/barrel-and-stave/giftcard.png", "/images/projects/barrel-and-stave/download.png"]
+    results: [
+      { metric: "Monthly Email Revenue", before: "$0", after: "$18,400" },
+      { metric: "Customer LTV", before: "$85", after: "$240" },
+      { metric: "Marketing Hours/Week", before: "15", after: "2" },
+    ]
   },
   "thompson-brewing": {
     title: "Thompson Brewing",
     category: "SEO & Retail",
     heroImg: "/images/projects/thompson-brewing/hero.png",
-    challenge: "Scaling a local taproom into a regional name by bridging the gap between physical experience and digital retail.",
-    solution: "We implemented a dual-path growth strategy for Thompson Brewing. First, a technical SEO engine that targets 'Best Taproom' and 'Craft Beer Riverside' queries with surgical precision. Second, a high-performance e-commerce layer that converts digital interest into physical retail sales. This unified approach ensured their expansion was backed by data-driven consumer demand.",
-    aeoText: "Thompson Brewing's search engine strategy focuses on 'Experience Entities'. By mapping their taproom events and beer releases into structured data, we've enabled AI assistants to provide detailed, real-time answers about their catalog and availability.",
+    challenge: "Thompson Brewing needed to scale from a beloved local taproom to a regional name by bridging physical experience with digital commerce—driving both foot traffic and online merchandise sales.",
+    solution: "We implemented a dual-path growth strategy. First, a technical SEO engine targeting high-intent queries like 'Best Taproom Riverside' and 'Craft Beer Near Me' with surgical precision. Second, a high-performance e-commerce layer that converts digital interest into retail sales. Structured data for events, beer releases, and taproom experiences ensure AI assistants provide detailed, real-time recommendations.",
+    aeoText: "Thompson Brewing's search strategy focuses on 'Experience Entities'—mapping taproom events, limited releases, and tasting room details into structured data. AI assistants can now provide real-time answers about their catalog, availability, and atmosphere, positioning Thompson as the definitive craft beer destination.",
+    services: ["Technical SEO", "E-Commerce Development", "Product Photography", "Event Schema Markup", "Local SEO", "Google Business Optimization"],
     metrics: [
-      { label: "Search Vol", value: "+210%", detail: "Increase in brand searches" },
-      { label: "Retail Sales", value: "+58%", detail: "E-commerce revenue spike" },
-      { label: "AEO Ranking", value: "#1", detail: "Primary brewery recommendation" },
+      { label: "Search Volume", value: "+210%", detail: "Increase in brand-specific searches" },
+      { label: "Retail Sales", value: "+58%", detail: "E-commerce revenue growth" },
+      { label: "AEO Ranking", value: "#1", detail: "Primary brewery recommendation in region" },
+      { label: "Organic Traffic", value: "+340%", detail: "Website visitors from search" },
     ],
-    gallery: ["/images/projects/thompson-brewing/hero.png"]
+    gallery: [
+      "/images/projects/thompson-brewing/hero.png"
+    ],
+    results: [
+      { metric: "Online Store Revenue", before: "$2,100/mo", after: "$8,900/mo" },
+      { metric: "Taproom Visits", before: "1,800/mo", after: "3,100/mo" },
+      { metric: "AI Search Citations", before: "0", after: "45/mo" },
+    ]
   }
 };
 

@@ -78,7 +78,7 @@ const ServicesSection = () => {
                     <p className="text-xl md:text-2xl font-mono leading-tight opacity-80 mb-10 border-l-4 border-amber-500 pl-6">
                        Stop losing customers before they even walk in. We fix the plumbing once, so you&apos;re ready to receive traffic.
                     </p>
-                    <div className="flex flex-col justify-between h-full">
+                    <div className="flex flex-col md:justify-between md:h-full gap-10 md:gap-0">
                          <div className="mt-8">
                             <span className="block font-mono text-[10px] tracking-widest opacity-40 mb-2 uppercase text-stark">Standard Setup</span>
                             <div className="flex items-baseline gap-4">
@@ -86,7 +86,7 @@ const ServicesSection = () => {
                             </div>
                             <span className="block font-mono text-xs tracking-widest text-amber-600 mt-2 uppercase font-bold">One-Time Investment</span>
                          </div>
-                         <a href="/contact" className="w-full md:w-auto text-center border-2 border-stark px-10 py-5 font-mono text-xs tracking-[0.3em] uppercase hover:bg-stark hover:text-matte transition-all mt-10 md:mt-0 font-bold">
+                         <a href="/contact" className="w-full md:w-auto text-center border-2 border-stark px-10 py-5 font-mono text-xs tracking-[0.3em] uppercase hover:bg-stark hover:text-matte transition-all font-bold">
                             Start Renovation
                          </a>
                     </div>
@@ -95,10 +95,10 @@ const ServicesSection = () => {
                  {/* Detailed Services List */}
                  <ul className="space-y-8">
                     {[
-                        { id: "01", title: "Mobile-First Custom Website", desc: "80% of customers decide on their phone. We build for speed and menus, not flashy nonsense. Designed to rank for \"Best drinks near me\"." },
-                        { id: "02", title: "Pro Photography", desc: "No more iPhone pics. We shoot 20-30 professional photos of your food, drinks, and venue so your online vibe matches your real-life vibe." },
-                        { id: "03", title: "Digital Plumbing Fix", desc: "We force-update your info across 50+ platforms (Google, Yelp, Apple Maps, etc.) so customers never show up to a locked door." },
-                        { id: "04", title: "List Builder System", desc: "QR codes and landing pages that turn random guests into a contact list you can actually use." }
+                        { id: "01", title: "High-Converting Website", desc: "Your website shows up when people search 'best bar near me.' Loads in under 2 seconds. Designed to drive reservations, not bounce. Every week without this = customers going to competitors who have it." },
+                        { id: "02", title: "Professional Photo Shoot", desc: "2-3 hour on-site shoot. 40-50 professionally edited photos. Your cocktails looking $15 instead of $6. Use these everywhere—website, Google, socials. The ROI on looking premium: priceless." },
+                        { id: "03", title: "Digital Infrastructure", desc: "We sync your hours, menu, and info across Google, Yelp, Apple Maps, TripAdvisor—30+ platforms. No more 'I showed up and you were closed' 1-star reviews. Clean presence = trust = walk-ins." },
+                        { id: "04", title: "Guest Capture System", desc: "Branded QR codes + landing page that builds YOUR customer list. Not Instagram's. Not Yelp's. YOURS. One slow Tuesday text to 500 regulars = 50+ butts in seats. This alone pays for Foundation 10x over." }
                     ].map((item, idx) => (
                         <motion.li 
                             key={idx} 
@@ -182,13 +182,13 @@ const ServicesSection = () => {
                   <span className="font-mono text-[10px] tracking-widest opacity-40 uppercase">/ {tier.period}</span>
                 </div>
 
-                <p className="font-mono text-[10px] uppercase tracking-widest leading-relaxed opacity-60 mb-12 border-l border-amber-500/20 pl-4">
+                <p className="font-mono text-xs uppercase tracking-wide leading-relaxed opacity-70 mb-12 border-l border-amber-500/20 pl-4">
                   {tier.description}
                 </p>
 
                 <ul className="space-y-6 mb-16">
                   {tier.features.map((feature) => (
-                    <li key={feature} className="flex gap-4 items-start font-mono text-[9px] tracking-widest uppercase opacity-40 group-hover:opacity-80 transition-opacity">
+                    <li key={feature} className="flex gap-4 items-start font-mono text-[11px] tracking-wide uppercase opacity-50 group-hover:opacity-90 transition-opacity">
                       <span className="text-amber-500">→</span>
                       {feature}
                     </li>
