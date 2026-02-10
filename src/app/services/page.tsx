@@ -4,104 +4,59 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import SidebarBlade from "@/components/SidebarBlade";
+import Footer from "@/components/Footer";
 
 const ServicesPage = () => {
-  // Quick Services Strip - compact overview
-  const quickServices = [
-    {
-      title: "WEB DESIGN",
-      subtitle: "AEO OPTIMIZED",
-      description: "Answer-engine machines. Fast, cinematic, built for discovery.",
-    },
-    {
-      title: "BRANDING",
-      subtitle: "VISUAL IDENTITY",
-      description: "Industrial-grade logos and brand systems that cut through noise.",
-    },
-    {
-      title: "MARKETING",
-      subtitle: "GROWTH SYSTEMS",
-      description: "Campaigns that fill seats. Social, email, and local dominance.",
-    },
-    {
-      title: "GRAPHIC DESIGN",
-      subtitle: "VISUAL ASSETS",
-      description: "Menus, signage, merch, and everything your brand touches.",
-    },
-  ];
+    const aiSolutions = [
+        { title: "THE AI TRUTH AUDIT", price: "$97", desc: "A brutal, data-backed diagnosis of your venue's 'AI Invisibility.' We show you exactly why Gemini, ChatGPT, and Apple Intelligence are ignoring your bar and recommending the one down the street instead." },
+        { title: "THE STEALTH AUDIT", price: "$399 – $699", desc: "A one-time operational deep dive to stop the 'bleeding.' We identify leakage, theft, and inventory waste to protect your profit margins before we start growing them." },
+        { title: "THE EVENT BLITZ", price: "$750 + AD SPEND", desc: "A 14-day intensive traffic campaign designed for a specific date (Anniversary, Holiday, or Grand Opening). We fire The Pour and run hyper-local ads to drive a massive spike in asses in seats immediately." },
+        { title: "MENU ENGINEERING", price: "$499", desc: "We use the Signature Menu System to redesign your layout based on sales data. By moving your 'Margin Heroes' into high-visibility zones, we increase your Average Order Value (AOV) by 10-15% on every guest." }
+    ];
 
-  // Foundation Package - expanded details
-  const foundationDetails = [
-    { 
-      label: "High-End Custom Website", 
-      value: "Speed-optimized, mobile-first design built to outrank competitors. Includes responsive layouts, SEO architecture, Google Analytics integration, and a simple CMS for easy updates." 
-    },
-    { 
-      label: "Professional Photography", 
-      value: "2-3 hour on-site shoot with a professional photographer. Receive 40-50 expertly edited photos capturing your venue's atmosphere, signature drinks, food, and team." 
-    },
-    { 
-      label: "Digital Infrastructure", 
-      value: "Complete listing sync across Google, Yelp, TripAdvisor, and 30+ directories. Reservation system integration, hours sync, and backend connections that make everything work seamlessly." 
-    },
-    { 
-      label: "Guest Capture System", 
-      value: "Branded QR code marketing materials + custom landing page. Build your own customer database—own your audience and guarantee repeat visits." 
-    },
-    { 
-      label: "Menu & Print Design", 
-      value: "Professional menu design (digital + print-ready), plus essential collateral: table tents, coasters, or signage to match your brand." 
-    },
-    { 
-      label: "Launch & Handoff", 
-      value: "Full walkthrough of your new digital presence. Staff training on the CMS, analytics overview, and 30-day post-launch support." 
-    },
-  ];
-
-  // Monthly Tiers
-  const tiers = [
-    {
-      name: "THE WELL",
-      price: "449",
-      period: "monthly",
-      description: "The Insurance Policy. Protect your reputation without the busy work.",
-      features: [
-        "Reputation Defense (All Reviews w/in 24hr)",
-        "Active Search Signal (Weekly Profile Updates)",
-        "Listing Maintenance",
-        "Data Collection Management",
-      ],
-      isPopular: false,
-    },
-    {
-      name: "THE CALL",
-      price: "1,149",
-      period: "monthly",
-      description: "The 'Fill The Seats' Button. The engine that drives revenue.",
-      features: [
-        "Everything in The Well",
-        "The Birthday Machine (Auto-Texts)",
-        "Missed Call Recovery System",
-        "Slow Night Blasts (6x/Month)",
-        "Social Media Autopilot (3x/Week)",
-      ],
-      isPopular: true,
-    },
-    {
-      name: "TOP SHELF",
-      price: "2,449",
-      period: "monthly",
-      description: "The Household Name. For the venue that wants to be #1 in the city.",
-      features: [
-        "Everything in The Call",
-        "Monthly Content Shoots (Photo/Video)",
-        "Daily Social Management",
-        "Aggressive Influencer Outreach",
-        "VIP Access (24/7 Owner Line)",
-      ],
-      isPopular: false,
-    },
-  ];
+    const tiers = [
+        {
+          name: "THE WELL",
+          price: "449",
+          period: "monthly",
+          description: "The Insurance Policy. Protect your reputation without the busy work.",
+          features: [
+            "Reputation Defense (All Reviews Response within 48hrs)",
+            "The Active Signal (Weekly GMB Updates + Monthly Blog)",
+            "Listing Maintenance (24/7 Hours/Menu Sync)",
+            "Equity Vault Management (Own Your Data)",
+          ],
+        },
+        {
+          name: "THE CALL",
+          price: "1,149",
+          period: "monthly",
+          description: "The 'Fill The Seats' Button. The engine that drives revenue.",
+          features: [
+            "Everything in The Well",
+            "The Liquid Asset System (12 SMS + Monthly Email)",
+            "Missed Call Recovery (Auto Text-Back)",
+            "Group Revenue Engine (Birthday/Anniv Offers)",
+            "Social Media Autopilot (3x/Week, 12 Posts/Mo)",
+            "Influencer Outreach (6 Invites/Mo)",
+            "Monthly Strategy & ROI Reports (1hr Zoom)",
+          ],
+          isPopular: true,
+        },
+        {
+          name: "TOP SHELF",
+          price: "2,449",
+          period: "monthly",
+          description: "The Household Name. For the venue that wants to be #1 in the city.",
+          features: [
+            "Everything in The Call",
+            "Monthly Content Studio (50 Photos + 5 Reels)",
+            "Daily Social Management (5-7x/Week)",
+            "Aggressive Influencer Outreach (10+/mo)",
+            "Priority VIP Access (24/7 Agency Owner Text)",
+          ],
+        }
+      ];
 
   return (
     <main className="min-h-screen bg-matte text-stark selection:bg-stark selection:text-matte overflow-x-hidden">
@@ -110,7 +65,6 @@ const ServicesPage = () => {
       <div className="pl-[60px] md:pl-[80px]">
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-8 md:px-24">
-          {/* Home Button */}
           <Link 
             href="/" 
             className="inline-flex items-center gap-2 mb-12 font-mono text-[10px] tracking-widest uppercase text-stark/60 hover:text-amber-500 transition-colors group"
@@ -121,210 +75,215 @@ const ServicesPage = () => {
             Back to Home
           </Link>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col md:flex-row justify-between items-end gap-12"
-          >
-            <div>
-              <h1 className="text-8xl md:text-[12rem] font-display font-black leading-[0.8] tracking-tighter uppercase">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-8xl md:text-[10rem] font-display font-black leading-[0.8] tracking-tighter uppercase">
                 House <br /> Menu
               </h1>
-            </div>
-            <div className="max-w-md pb-4">
-              <p className="font-mono text-[10px] tracking-[0.3em] uppercase opacity-40 mb-6 font-bold text-amber-600">
-                Growth Engines
-              </p>
-              <p className="text-xl md:text-2xl font-mono leading-tight border-l-2 border-charcoal pl-6">
-                Turn visibility into revenue. We build the machine, then we run it.
-              </p>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* Quick Services Strip */}
-        <section className="px-8 md:px-24 pb-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {quickServices.map((service, idx) => (
-              <motion.a
-                key={service.title}
-                href="/contact"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group p-6 border border-charcoal/30 hover:border-amber-600/50 hover:bg-white/5 transition-all"
-              >
-                <h3 className="text-lg md:text-xl font-display font-black tracking-tighter uppercase mb-1 group-hover:text-amber-500 transition-colors">
-                  {service.title}
-                </h3>
-                <span className="font-mono text-[8px] tracking-widest uppercase text-amber-600 block mb-3">
-                  {service.subtitle}
-                </span>
-                <p className="font-sans text-xs opacity-50 leading-relaxed">
-                  {service.description}
-                </p>
-              </motion.a>
-            ))}
-          </div>
-        </section>
-
-        {/* AI Audit Callout - Compact */}
-        <section className="bg-bone text-matte py-16 px-8 md:px-24 relative overflow-hidden">
-          <div className="max-w-4xl relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div className="flex-1">
-              <span className="font-mono text-[10px] tracking-[0.4em] uppercase mb-4 block text-amber-600 font-bold">THE DIAGNOSTIC</span>
-              <h2 className="text-4xl md:text-5xl font-display font-black tracking-tighter uppercase leading-[0.9] mb-4">
-                The AI Truth Audit <span className="text-amber-600">— $97</span>
-              </h2>
-              <p className="font-sans text-base opacity-70 leading-relaxed max-w-xl">
-                When someone asks Siri or ChatGPT where to grab a drink, are you the answer? We run a full diagnostic on how AI sees your bar.
-                <span className="font-bold"> The $97 is credited back if you move forward with Foundation.</span>
-              </p>
-            </div>
-            <a
-              href="/aivisibility"
-              className="inline-block border-2 border-matte px-8 py-4 font-display text-lg uppercase tracking-widest hover:bg-matte hover:text-bone transition-all font-bold whitespace-nowrap"
-            >
-              Book Audit →
-            </a>
-          </div>
-        </section>
-
-        {/* Foundation Section - Expanded */}
-        <section className="py-24 px-8 md:px-24 border-b border-charcoal/30">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <div className="mb-12">
-              <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-amber-600 font-bold block mb-4">PHASE 1 — ONE-TIME SETUP</span>
-              <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter uppercase mb-4">
-                Foundation
-              </h2>
-              <p className="text-xl md:text-2xl font-mono leading-tight border-l-2 border-amber-600 pl-6 max-w-2xl opacity-80">
-                The digital renovation. Everything you need to compete—and win. <span className="text-amber-500 font-bold">$2,500 one-time.</span>
-              </p>
-            </div>
+            </motion.div>
             
-            {/* Foundation Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-              {foundationDetails.map((detail, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="border-l-2 border-amber-600/40 pl-6 hover:border-amber-600 transition-colors"
-                >
-                  <h4 className="font-mono text-xs tracking-widest uppercase text-stark mb-3 font-bold">
-                    {detail.label}
-                  </h4>
-                  <p className="font-sans text-sm opacity-60 leading-relaxed">
-                    {detail.value}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Foundation CTA */}
-            <div className="mt-16 flex flex-col sm:flex-row gap-4 items-start">
-              <a
-                href="/contact"
-                className="inline-block bg-stark text-matte px-10 py-5 font-display text-lg uppercase tracking-widest hover:bg-amber-500 transition-all font-bold"
-              >
-                Start Foundation →
-              </a>
-              <p className="font-mono text-xs opacity-40 max-w-sm pt-2">
-                Already have a site? Ask about à la carte services—photography, listings fix, or guest capture only.
+            <motion.div 
+               initial={{ opacity: 0, x: 20 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{ duration: 0.8, delay: 0.2 }}
+               className="max-w-xl border-l-4 border-amber-500 pl-8 pb-4"
+            >
+              <span className="font-mono text-xs tracking-[0.5em] text-amber-500 uppercase mb-4 block font-bold">In The Weeds</span>
+              <p className="text-xl md:text-2xl font-mono leading-tight uppercase font-black text-stark/90 mb-4">
+                We have experience behind the bar... in the weeds, not just behind a computer screen.
               </p>
-            </div>
-          </motion.div>
+              <p className="font-mono text-[10px] tracking-widest opacity-40 uppercase leading-relaxed">
+                99% of agencies are staffed by digital generalists who have never pulled a tap or handled a 10:00 PM Saturday rush. We understand the language of the floor because we&apos;ve lived it.
+              </p>
+            </motion.div>
+          </div>
         </section>
 
-        {/* Monthly Tiers Section */}
-        <section className="py-24 px-8 md:px-24">
-          <div className="mb-12">
-            <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-amber-600 font-bold block mb-4">PHASE 2 — ONGOING GROWTH</span>
-            <h2 className="text-4xl md:text-5xl font-display font-black tracking-tighter uppercase mb-4">
-              Monthly Engines
-            </h2>
-            <p className="text-lg font-mono opacity-60 max-w-xl">
-              We build the machine, then we run it. Pick your speed.
-            </p>
-          </div>
+        {/* 01. The Diagnostic (Truth Audit) */}
+        <section className="px-8 md:px-24 mb-24">
+           <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-bone text-matte p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 relative overflow-hidden"
+           >
+              <div className="flex-1">
+                <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-amber-600 font-bold mb-2 block">FIRST STEP</span>
+                <h2 className="text-4xl md:text-5xl font-display font-black tracking-tighter uppercase leading-none">THE AI TRUTH AUDIT <span className="text-amber-600">— $97</span></h2>
+                <p className="font-mono text-[10px] opacity-70 mt-4 uppercase tracking-widest max-w-xl">
+                   A brutal diagnosis of your venue&apos;s &quot;AI Invisibility.&quot; We show you exactly why Gemini, ChatGPT, and Apple Intelligence are ignoring your bar.
+                </p>
+              </div>
+              <Link href="/aivisibility" className="bg-matte text-stark px-8 py-4 font-mono text-xs tracking-widest uppercase hover:bg-amber-600 transition-colors font-bold whitespace-nowrap z-10">
+                 Get The Truth →
+              </Link>
+              {/* Abstract Watermark */}
+              <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 text-8xl font-display font-black text-matte/5 uppercase select-none pointer-events-none">TRUTH</div>
+           </motion.div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-charcoal/30">
-            {tiers.map((tier, idx) => (
-              <motion.div
-                key={tier.name}
-                initial={{ opacity: 0, y: 30 }}
+        {/* Core Services: Side-by-Side */}
+        <section className="px-8 md:px-24 mb-32">
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Web Design */}
+              <motion.div 
+                 initial={{ opacity: 0, x: -20 }}
+                 whileInView={{ opacity: 1, x: 0 }}
+                 viewport={{ once: true }}
+                 className="p-10 border border-charcoal/30 flex flex-col justify-between"
+              >
+                 <div>
+                    <span className="font-mono text-[10px] tracking-[0.5em] text-amber-500 uppercase mb-6 block">01 / THE ENGINE</span>
+                    <h3 className="text-5xl font-display font-black tracking-tighter uppercase mb-8">WEB DESIGN</h3>
+                    <p className="font-mono text-lg uppercase leading-tight opacity-80 mb-6 border-l-2 border-amber-500 pl-4">
+                       No templates. No AI slop. No old junk.
+                    </p>
+                    <p className="font-mono text-xs opacity-50 uppercase tracking-widest leading-relaxed">
+                       Mobile-first, quick and responsive. Built from the ground up to ensure you show up as a Top Recommendation on Google, AI search assistants, and GEO.
+                    </p>
+                 </div>
+              </motion.div>
+
+              {/* Branding */}
+              <motion.div 
+                 initial={{ opacity: 0, x: 20 }}
+                 whileInView={{ opacity: 1, x: 0 }}
+                 viewport={{ once: true }}
+                 className="p-10 border border-charcoal/30 flex flex-col justify-between"
+              >
+                 <div>
+                    <span className="font-mono text-[10px] tracking-[0.5em] text-amber-500 uppercase mb-6 block">02 / THE DNA</span>
+                    <h3 className="text-5xl font-display font-black tracking-tighter uppercase mb-8">BRANDING</h3>
+                    <p className="font-mono text-lg uppercase leading-tight opacity-80 mb-6 border-l-2 border-amber-500 pl-4">
+                       Logo is a commodity. Brand Identity is a force multiplier.
+                    </p>
+                    <p className="font-mono text-xs opacity-50 uppercase tracking-widest leading-relaxed">
+                       We justify your premium pricing and ensure you aren&apos;t just &quot;another bar&quot;. STOP LOOKING LIKE A HOBBY. START LOOKING LIKE A LANDMARK.
+                    </p>
+                 </div>
+              </motion.div>
+           </div>
+        </section>
+
+        {/* 03. AI A La Carte */}
+        <section className="px-8 md:px-24 mb-32">
+          <div className="mb-12">
+            <span className="font-mono text-xs tracking-[0.5em] text-amber-500 uppercase mb-4 block">03 / A La Carte</span>
+            <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter uppercase">HIGH-IMPACT SOLUTIONS</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {aiSolutions.map((item, idx) => (
+              <motion.div 
+                key={idx} 
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`p-10 border-b md:border-b-0 border-charcoal/30 md:border-r last:border-r-0 relative group hover:bg-white/5 transition-colors`}
+                className="p-8 border border-charcoal/50 hover:bg-white/5 transition-all group relative overflow-hidden"
               >
-                {tier.isPopular && (
-                  <div className="absolute top-0 right-0 bg-stark text-matte font-mono text-[8px] tracking-widest px-4 py-1 uppercase">
-                    Revenue Engine
-                  </div>
-                )}
-                
-                <div className="mb-8">
-                  <h3 className="text-3xl md:text-4xl font-display font-black tracking-tighter uppercase">
-                    {tier.name}
-                  </h3>
+                <div className="flex justify-between items-start mb-4 relative z-10">
+                  <h4 className="text-xl font-display font-black uppercase group-hover:text-amber-500 transition-colors leading-tight max-w-[70%]">{item.title}</h4>
+                  <span className="font-mono text-sm font-bold text-amber-500">{item.price}</span>
                 </div>
-
-                <div className="mb-8 flex items-baseline gap-2">
-                  <span className="text-4xl font-display font-black tracking-tighter text-stark/90">${tier.price}</span>
-                  <span className="font-mono text-[10px] tracking-widest opacity-40 uppercase">/ {tier.period}</span>
-                </div>
-
-                <p className="font-sans text-sm opacity-70 mb-8 leading-relaxed min-h-[3rem]">
-                  {tier.description}
-                </p>
-
-                <ul className="space-y-3 mb-12">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex gap-3 items-start font-mono text-[10px] tracking-widest uppercase opacity-60">
-                      <span className="text-amber-600 font-bold">→</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href="/contact"
-                  className="block w-full text-center border border-stark/20 py-5 font-mono text-[10px] tracking-[0.3em] uppercase hover:bg-stark hover:text-matte transition-all group-hover:border-stark"
-                >
-                  Inquire
-                </a>
+                <p className="font-mono text-[10px] opacity-50 uppercase leading-relaxed tracking-widest relative z-10">{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="py-20 px-8 border-t border-charcoal bg-matte">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-4xl font-display font-black text-stark/20 uppercase tracking-tighter">
-              LAST CALL <br /> COLLECTIVE
-            </div>
-            <div className="text-center font-mono text-[10px] tracking-[0.4em] text-stone-600 uppercase">
-              © 2024 / The House Standard
-            </div>
-            <a 
-              href="mailto:contact@lastcall.co"
-              className="font-mono text-[10px] tracking-widest text-stark border border-stark/20 px-8 py-4 uppercase hover:bg-stark hover:text-matte transition-all"
+        {/* 04. The Foundation (Renovated Card) */}
+        <section className="px-8 md:px-24 mb-32">
+            <motion.div
+               initial={{ opacity: 0, y: 50 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               className="w-full border border-white/10 bg-matte/40 backdrop-blur-md p-10 md:p-16 relative overflow-hidden"
             >
-              Inquiries
-            </a>
+               <div className="absolute top-0 right-0 p-8">
+                  <span className="font-mono text-lg tracking-widest text-amber-600 uppercase font-bold opacity-60">PHASE 1</span>
+               </div>
+               
+               <div className="max-w-4xl relative z-10">
+                  <span className="font-mono text-[10px] tracking-[0.5em] text-stone-500 uppercase mb-8 block">THE DIGITAL RENOVATION</span>
+                  <h3 className="text-6xl md:text-8xl font-display font-black tracking-tighter uppercase leading-[0.8] mb-12">THE <br /> FOUNDATION</h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                     <p className="text-lg md:text-xl font-mono leading-tight opacity-80 border-l-4 border-amber-500 pl-6 uppercase tracking-tight">
+                        WE BUILD THE MACHINE TO MAKE YOU A TOP RECOMMENDATION. STOP LOSING CUSTOMERS TO THE BAR DOWN THE STREET BEFORE THEY EVEN WALK IN.
+                     </p>
+                     <div className="flex flex-col justify-end">
+                        <div className="flex items-baseline gap-4">
+                            <span className="text-2xl font-display font-black tracking-tighter opacity-20 line-through">$2,500</span>
+                            <span className="text-5xl font-display font-black tracking-tighter text-amber-500">$1,500*</span>
+                        </div>
+                        <span className="block font-mono text-[10px] tracking-widest text-amber-600 mt-2 uppercase font-bold">*Partner Case Study Pricing</span>
+                     </div>
+                  </div>
+
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 opacity-50">
+                     {[
+                        "High-Converting AEO/SEO Website",
+                        "2-Hour Content Studio (50 Photos + 5 Videos)",
+                        "Digital Infrastructure Sync (20+ Directories)",
+                        "The Equity Vault (Guest Data Capture)",
+                        "Custom QR & Print Asset Design",
+                        "Automated Missed Call Text-Back"
+                     ].map((item) => (
+                        <li key={item} className="font-mono text-[10px] tracking-widest uppercase flex gap-3">
+                           <span className="text-amber-500">→</span> {item}
+                        </li>
+                     ))}
+                  </ul>
+
+                  <Link href="/contact" className="inline-block mt-12 border-2 border-stark px-8 py-4 font-mono text-xs tracking-widest uppercase hover:bg-stark hover:text-matte transition-all font-bold">
+                     Start Foundation →
+                  </Link>
+               </div>
+               {/* Watermark */}
+               <div className="absolute -bottom-20 -right-20 text-[20rem] font-display font-black text-stark/5 pointer-events-none select-none uppercase -rotate-6">BUILD</div>
+            </motion.div>
+        </section>
+
+        {/* 05. Monthly Engines (Tiers) */}
+        <section className="px-8 md:px-24 mb-48">
+          <div className="mb-12">
+            <span className="font-mono text-lg tracking-[0.4em] uppercase text-amber-500 font-bold block mb-2">PHASE 2</span>
+            <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter uppercase">MONTHLY ENGINES</h2>
+            <p className="font-mono opacity-40 text-xs mt-4 uppercase tracking-widest">We build the bar, then we fill it. Pick your speed.</p>
           </div>
-        </footer>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-charcoal/30 pt-12">
+            {tiers.map((tier) => (
+              <div key={tier.name} className={`p-8 border border-charcoal/30 relative flex flex-col justify-between ${tier.isPopular ? 'bg-white/5 border-amber-500/30' : ''}`}>
+                {tier.isPopular && <span className="absolute top-0 right-0 bg-amber-500 text-matte text-[8px] font-mono px-3 py-1 uppercase font-bold">Recommended</span>}
+                <div>
+                  <h4 className="text-3xl font-display font-black uppercase mb-4">{tier.name}</h4>
+                  <div className="flex items-baseline gap-2 mb-8">
+                    <span className="text-3xl font-display font-black tracking-tighter">${tier.price}</span>
+                    <span className="font-mono text-[10px] tracking-widest opacity-40 uppercase">/ MO</span>
+                  </div>
+                  <ul className="space-y-4 mb-12">
+                     {tier.features.map(f => (
+                        <li key={f} className="font-mono text-[10px] tracking-wide uppercase opacity-50 flex gap-2">
+                           <span className="text-amber-500">→</span> {f}
+                        </li>
+                     ))}
+                  </ul>
+                </div>
+                <Link href="/contact" className="block text-center border border-stark/20 py-4 font-mono text-[10px] tracking-widest uppercase hover:bg-stark hover:text-matte transition-all">
+                   Inquire
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <Footer />
       </div>
     </main>
   );

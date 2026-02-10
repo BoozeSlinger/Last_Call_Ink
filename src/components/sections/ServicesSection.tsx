@@ -11,10 +11,10 @@ const tiers = [
     period: "monthly",
     description: "The Insurance Policy. Protect your reputation without the busy work.",
     features: [
-      "Reputation Defense (All Reviews w/in 24hr)",
-      "Active Search Signal (Weekly Profile Updates)",
-      "Listing Maintenance (Holiday Hours/Details)",
-      "Data Collection Management",
+      "Reputation Defense (All Reviews Response within 48hrs)",
+      "The Active Signal (Weekly GMB Updates + Monthly Blog)",
+      "Listing Maintenance (24/7 Hours/Menu Sync)",
+      "Equity Vault Management (Own Your Data)",
     ],
   },
   {
@@ -24,12 +24,12 @@ const tiers = [
     description: "The 'Fill The Seats' Button. The engine that drives revenue.",
     features: [
       "Everything in The Well",
-      "The Birthday Machine (Auto-Texts)",
-      "Missed Call Recovery System",
-      "Slow Night Blasts (6x/Month)",
-      "Social Media Autopilot (3x/Week)",
-      "Influencer Invites (6/Month)",
-      "Real ROI Reports",
+      "The Liquid Asset System (12 SMS + Monthly Email)",
+      "Missed Call Recovery (Auto Text-Back)",
+      "Group Revenue Engine (Birthday/Anniv Offers)",
+      "Social Media Autopilot (3x/Week, 12 Posts/Mo)",
+      "Influencer Outreach (6 Invites/Mo)",
+      "Monthly Strategy & ROI Reports (1hr Zoom)",
     ],
     isPopular: true,
   },
@@ -40,17 +40,17 @@ const tiers = [
     description: "The Household Name. For the venue that wants to be #1 in the city.",
     features: [
       "Everything in The Call",
-      "Monthly Content Shoots (Photo/Video)",
+      "Monthly Content Studio (50 Photos + 5 Reels)",
       "Daily Social Management (5-7x/Week)",
       "Aggressive Influencer Outreach (10+/mo)",
-      "VIP Access (24/7 Owner Line)",
+      "Priority VIP Access (24/7 Agency Owner Text)",
     ],
   }
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="bg-matte text-stark pt-0 pb-32 relative z-10">
+    <section id="services" className="bg-matte text-stark pt-0 pb-0 relative z-10">
        {/* Visual Connector Line */}
        <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 h-24 w-px bg-linear-to-b from-amber-500 to-transparent opacity-50" />
 
@@ -63,61 +63,57 @@ const ServicesSection = () => {
            transition={{ duration: 1 }}
            className="w-full border border-white/10 bg-matte/40 backdrop-blur-md text-stark p-12 md:p-24 relative overflow-hidden group shadow-2xl hover:border-white/20 transition-all duration-500"
         >
-           <div className="absolute top-0 right-0 p-8">
-             <span className="font-mono text-xs tracking-widest text-amber-600 uppercase opacity-60 group-hover:opacity-100 transition-opacity font-bold">PHASE 1</span>
-           </div>
-           
            <div className="max-w-5xl relative z-10">
-              <span className="font-mono text-[10px] tracking-[0.5em] text-stone-500 uppercase mb-8 block">THE DIGITAL RENOVATION</span>
+              <span className="font-mono text-xs tracking-[0.3em] uppercase text-amber-500 mb-4 block">PHASE 1 / THE DIGITAL RENOVATION</span>
               <h3 className="text-5xl md:text-8xl font-display font-black tracking-tighter uppercase leading-[0.8] mb-12 text-stark group-hover:text-white transition-colors">
                 The <br /> Foundation 
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
-                 <div>
-                    <p className="text-xl md:text-2xl font-mono leading-tight opacity-80 mb-10 border-l-4 border-amber-500 pl-6">
-                       Stop losing customers before they even walk in. We fix the plumbing once, so you&apos;re ready to receive traffic.
-                    </p>
-                    <div className="flex flex-col md:justify-between md:h-full gap-10 md:gap-0">
-                         <div className="mt-8">
-                            <span className="block font-mono text-[10px] tracking-widest opacity-40 mb-2 uppercase text-stark">Standard Setup</span>
-                            <div className="flex items-baseline gap-4">
-                                <span className="text-5xl md:text-6xl font-display font-black tracking-tighter text-stark">$2,500</span>
-                            </div>
-                            <span className="block font-mono text-xs tracking-widest text-amber-600 mt-2 uppercase font-bold">One-Time Investment</span>
-                         </div>
-                         <a href="/contact" className="w-full md:w-auto text-center border-2 border-stark px-10 py-5 font-mono text-xs tracking-[0.3em] uppercase hover:bg-stark hover:text-matte transition-all font-bold">
-                            Start Renovation
-                         </a>
-                    </div>
+              {/* Tagline + Pricing Row */}
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-12">
+                 <p className="text-xl md:text-2xl font-mono leading-tight opacity-80 border-l-4 border-amber-500 pl-6 uppercase tracking-tight max-w-xl">
+                    WE BUILD THE MACHINE TO MAKE YOU A TOP RECOMMENDATION. STOP LOSING CUSTOMERS TO THE BAR DOWN THE STREET BEFORE THEY EVEN WALK IN.
+                 </p>
+                 <div className="flex flex-col items-end shrink-0">
+                     <div className="flex items-baseline gap-4">
+                         <span className="text-2xl md:text-3xl font-display font-black tracking-tighter text-stark/40 line-through">$2,500</span>
+                         <span className="text-5xl md:text-6xl font-display font-black tracking-tighter text-amber-500">$1,500*</span>
+                     </div>
+                     <span className="block font-mono text-xs tracking-widest text-amber-600 mt-2 uppercase font-bold">*Partner Case Study Pricing</span>
                  </div>
-
-                 {/* Detailed Services List */}
-                 <ul className="space-y-8">
-                    {[
-                        { id: "01", title: "High-Converting Website", desc: "Your website shows up when people search 'best bar near me.' Loads in under 2 seconds. Designed to drive reservations, not bounce. Every week without this = customers going to competitors who have it." },
-                        { id: "02", title: "Professional Photo Shoot", desc: "2-3 hour on-site shoot. 40-50 professionally edited photos. Your cocktails looking $15 instead of $6. Use these everywhere—website, Google, socials. The ROI on looking premium: priceless." },
-                        { id: "03", title: "Digital Infrastructure", desc: "We sync your hours, menu, and info across Google, Yelp, Apple Maps, TripAdvisor—30+ platforms. No more 'I showed up and you were closed' 1-star reviews. Clean presence = trust = walk-ins." },
-                        { id: "04", title: "Guest Capture System", desc: "Branded QR codes + landing page that builds YOUR customer list. Not Instagram's. Not Yelp's. YOURS. One slow Tuesday text to 500 regulars = 50+ butts in seats. This alone pays for Foundation 10x over." }
-                    ].map((item, idx) => (
-                        <motion.li 
-                            key={idx} 
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 + (idx * 0.1) }}
-                            className="group"
-                        >
-                            <h4 className="font-display font-black text-xl uppercase mb-2 flex items-center gap-3 group-hover:text-amber-500 transition-colors">
-                                <span className="text-amber-600 text-sm group-hover:text-amber-500">{item.id}</span> {item.title}
-                            </h4>
-                            <p className="font-mono text-xs opacity-70 leading-relaxed uppercase tracking-wide">
-                                {item.desc}
-                            </p>
-                        </motion.li>
-                    ))}
-                 </ul>
               </div>
+
+              {/* 2-Column Deliverables Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
+                 {[
+                     { id: "01", title: "High-Converting Website", desc: "AEO/SEO/GEO optimized. Show up as a Top Recommendation when people search 'Best Bar Near Me' or ask AI where to go tonight." },
+                     { id: "02", title: "2-Hour Content Studio", desc: "50 edited photos + 5 high-impact short-form videos. We make your cocktails look like $15 instead of $6." },
+                     { id: "03", title: "Digital Infrastructure", desc: "Sync across Google, Yelp, Apple Maps, and 20+ directories. No more 'I showed up and you were closed' reviews." },
+                     { id: "04", title: "The Equity Vault", desc: "Custom landing page and database to capture guest data. You own your customers—not Yelp, not Instagram." },
+                     { id: "05", title: "Custom Asset Design", desc: "On-brand QR designs for stickers, signage, and table tents. Physical hooks that capture data automatically." },
+                     { id: "06", title: "Missed Call Text-Back", desc: "The ultimate safety net. Auto-text guests back to book a table or check tonight's specials when you can't answer." }
+                 ].map((item, idx) => (
+                     <motion.div 
+                         key={idx} 
+                         initial={{ opacity: 0, y: 10 }}
+                         whileInView={{ opacity: 1, y: 0 }}
+                         viewport={{ once: true }}
+                         transition={{ delay: 0.1 + (idx * 0.05) }}
+                         className="group flex gap-3"
+                     >
+                         <span className="text-amber-600 text-sm font-mono shrink-0 mt-1 group-hover:text-amber-500">{item.id}</span>
+                         <div>
+                             <h4 className="font-display font-black text-lg uppercase mb-1 group-hover:text-amber-500 transition-colors">{item.title}</h4>
+                             <p className="font-mono text-[10px] opacity-60 leading-relaxed uppercase tracking-wide">{item.desc}</p>
+                         </div>
+                     </motion.div>
+                 ))}
+              </div>
+
+              {/* CTA */}
+              <a href="/contact" className="inline-block border-2 border-stark px-10 py-5 font-mono text-xs tracking-[0.3em] uppercase hover:bg-stark hover:text-matte transition-all font-bold">
+                 Start Renovation
+              </a>
            </div>
            
            {/* Abstract Watermark */}
@@ -136,12 +132,12 @@ const ServicesSection = () => {
            className="border-t border-charcoal/30 pt-12 flex flex-col md:flex-row justify-between items-end gap-8"
         >
             <div>
-                <span className="font-mono text-xs tracking-[0.3em] uppercase text-amber-500 mb-4 block">PHASE 2 / GROWTH ENGINES</span>
+                <span className="font-mono text-xs tracking-[0.3em] uppercase text-amber-500 mb-4 block">PHASE 2 / REVENUE ENGINES</span>
                 <h2 className="text-6xl md:text-8xl font-display font-black leading-[0.8] tracking-tighter uppercase">
                     Build The Bar <br /> Then Fill It
                 </h2>
             </div>
-            <p className="max-w-md text-right font-mono opacity-50 text-sm leading-relaxed">
+            <p className="max-w-md text-right font-mono opacity-50 text-sm leading-relaxed uppercase tracking-widest">
                 Most agencies sell clicks. We deal in Revenue and Regulars. <br/>
                 Choose your engine.
             </p>
@@ -183,7 +179,7 @@ const ServicesSection = () => {
                 </div>
 
                 <p className="font-mono text-xs uppercase tracking-wide leading-relaxed opacity-70 mb-12 border-l border-amber-500/20 pl-4">
-                  {tier.description}
+                   &ldquo;{tier.description}&rdquo;
                 </p>
 
                 <ul className="space-y-6 mb-16">
@@ -223,14 +219,14 @@ const ServicesSection = () => {
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
                      <div>
                          <h4 className="font-display font-black text-lg uppercase mb-4 border-b border-matte/20 pb-2">Standard Terms</h4>
-                         <p className="font-mono text-xs opacity-80 leading-relaxed font-bold">
+                         <p className="font-mono text-xs opacity-80 leading-relaxed font-bold uppercase tracking-widest">
                              Month-to-month. Cancel anytime with 30 days notice. You own everything we build (website, photos, data).
                          </p>
                      </div>
                      <div>
                          <h4 className="font-display font-black text-lg uppercase mb-4 border-b border-matte/20 pb-2">Partner Offer</h4>
-                         <p className="font-mono text-xs opacity-80 leading-relaxed font-bold">
-                             Commit to 6 months to unlock the <span className="text-amber-600">$1,500 Foundation Setup</span> (Save $1,000 off standard $2,500). Early cancellation requires paying the difference on the setup fee.
+                         <p className="font-mono text-xs opacity-80 leading-relaxed font-bold uppercase tracking-widest">
+                             Commit to 6 months to THE CALL tier or higher to unlock the <span className="text-amber-600 font-black">$1,500 Foundation Setup</span> (Save $1,000 off standard $2,500).
                          </p>
                      </div>
                  </div>

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import SidebarBlade from "@/components/SidebarBlade";
+import Footer from "@/components/Footer";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -240,6 +241,7 @@ export default function ContactPage() {
             )}
           </AnimatePresence>
         </section>
+        <Footer />
       </div>
     </main>
   );

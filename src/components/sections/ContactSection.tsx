@@ -15,11 +15,37 @@ const ContactSection = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          type: 'contact',
+          message: `Service: ${formData.service}${formData.otherService ? ` (${formData.otherService})` : ''}\n\nNotes: ${formData.message}`
+        }),
+      });
+
+      if (!response.ok) throw new Error('Failed to send inquiry. Please try again.');
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('Something went wrong');
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -28,15 +54,15 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex flex-col lg:flex-row bg-bone selection:bg-matte selection:text-bone">
+    <section id="contact" className="flex flex-col lg:flex-row bg-bone selection:bg-matte selection:text-bone">
       {/* Left Side: Branding/Intro */}
-      <div className="w-full lg:w-2/5 p-8 md:p-16 lg:p-24 flex flex-col justify-between bg-matte text-bone border-r border-charcoal/20">
+      <div className="w-full lg:w-2/5 p-6 md:p-8 lg:p-10 flex flex-col justify-between bg-matte text-bone border-r border-charcoal/20">
         <div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-6xl md:text-8xl lg:text-9xl font-display font-black leading-[0.8] tracking-tighter uppercase mb-8"
+            className="text-4xl md:text-5xl lg:text-5xl font-display font-black leading-[0.8] tracking-tighter uppercase mb-4"
           >
             Pull up <br /> a stool
           </motion.h2>
@@ -51,22 +77,22 @@ const ContactSection = () => {
           </motion.p>
         </div>
 
-        <div className="mt-12 lg:mt-0">
-          <div className="space-y-6">
+        <div className="mt-6 lg:mt-0">
+          <div className="space-y-3">
             <div>
               <p className="font-mono text-[10px] tracking-widest uppercase opacity-40 mb-2">Inquiries</p>
-              <p className="text-xl font-display uppercase tracking-tight">service@lastcallcollective.com</p>
+              <p className="text-xl font-display uppercase tracking-tight font-bold text-amber-500">ryan@lastcall.marketing</p>
             </div>
             <div>
               <p className="font-mono text-[10px] tracking-widest uppercase opacity-40 mb-2">Social</p>
-              <p className="text-xl font-display uppercase tracking-tight">@lastcallcollective</p>
+              <p className="text-xl font-display uppercase tracking-tight">@lastcall.marketing</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Right Side: The Form */}
-      <div className="w-full lg:w-3/5 p-8 md:p-16 lg:p-24 bg-bone text-matte">
+      <div className="w-full lg:w-3/5 p-6 md:p-8 lg:p-10 bg-bone text-matte">
         <AnimatePresence mode="wait">
           {!submitted ? (
             <motion.form 
@@ -75,9 +101,9 @@ const ContactSection = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               onSubmit={handleSubmit}
-              className="max-w-2xl space-y-8"
+              className="max-w-2xl space-y-5"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Name */}
                 <div className="space-y-2">
                   <label className="font-mono text-[10px] tracking-[0.2em] uppercase text-charcoal/60">Your Name *</label>
@@ -107,7 +133,7 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Phone */}
                 <div className="space-y-2">
                   <label className="font-mono text-[10px] tracking-[0.2em] uppercase text-charcoal/60">Telephone *</label>
@@ -182,21 +208,27 @@ const ContactSection = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={4}
+                  rows={2}
                   placeholder="Tell us about your venue, your vibe, or your vision..."
                   className="w-full bg-transparent border border-charcoal/10 p-6 focus:border-charcoal outline-hidden transition-colors font-sans text-lg placeholder:opacity-30 resize-none"
                 />
               </div>
 
               {/* Submit */}
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                className="w-full md:w-auto bg-matte text-bone px-12 py-6 font-display text-xl uppercase tracking-widest hover:bg-charcoal transition-colors cursor-pointer"
-              >
-                Send Inquiry
-              </motion.button>
+              <div className="space-y-4">
+                {error && (
+                  <p className="text-red-500 font-mono text-xs uppercase tracking-widest">{error}</p>
+                )}
+                <motion.button
+                  whileHover={{ scale: loading ? 1 : 1.02 }}
+                  whileTap={{ scale: loading ? 1 : 0.98 }}
+                  type="submit"
+                  disabled={loading}
+                  className={`w-full md:w-auto bg-matte text-bone px-10 py-4 font-display text-lg uppercase tracking-widest transition-colors cursor-pointer ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-charcoal'}`}
+                >
+                  {loading ? 'Sending...' : 'Send Inquiry'}
+                </motion.button>
+              </div>
             </motion.form>
           ) : (
             <motion.div 

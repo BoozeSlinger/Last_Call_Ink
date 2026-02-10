@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import SidebarBlade from "@/components/SidebarBlade";
 import BentoSection from "@/components/BentoSection";
+import Footer from "@/components/Footer";
 
 const TheProofPage = () => {
   return (
@@ -52,17 +53,7 @@ const TheProofPage = () => {
           <BentoSection />
         </div>
 
-        {/* Footer Standard */}
-        <footer className="py-20 px-8 border-t border-charcoal bg-matte mt-12">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-4xl font-display font-black text-stark/20 uppercase tracking-tighter">
-              LAST CALL <br /> COLLECTIVE
-            </div>
-            <div className="text-center font-mono text-[10px] tracking-[0.4em] text-stone-600 uppercase">
-              © 2024 / The House Standard
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </main>
   );

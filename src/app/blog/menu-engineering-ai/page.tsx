@@ -1,12 +1,13 @@
 import Link from "next/link";
 import SidebarBlade from "@/components/SidebarBlade";
+import Footer from "@/components/Footer";
 
 export default function Post_MenuEngineering() {
   return (
     <main className="relative min-h-screen bg-bone text-matte selection:bg-matte selection:text-bone">
       <SidebarBlade />
 
-      <article className="max-w-[1400px] mx-auto px-6 md:px-12 py-32 md:py-48">
+      <article className="max-w-[1400px] mx-auto pl-[60px] md:pl-[120px] pr-6 md:pr-12 py-16 md:py-20">
         
         {/* Post Header */}
         <header className="max-w-4xl mb-24">
@@ -35,7 +36,7 @@ export default function Post_MenuEngineering() {
         {/* Content Body */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
-            {/* Sidebar / Table of Contents */}
+            {/* Sidebar / Table of Contents area equivalent */}
             <div className="lg:col-span-3 hidden lg:block">
                 <div className="sticky top-32 border-l border-charcoal/20 pl-6">
                     <p className="font-mono text-xs tracking-widest text-charcoal/50 uppercase mb-4">In this shift note</p>
@@ -43,7 +44,7 @@ export default function Post_MenuEngineering() {
                         <li>The PDF Problem</li>
                         <li>Why Robots Hate Images</li>
                         <li>Structured Data Menus</li>
-                        <li>The 'Dish Search' Fix</li>
+                        <li>The &apos;Dish Search&apos; Fix</li>
                     </ul>
                 </div>
             </div>
@@ -53,14 +54,14 @@ export default function Post_MenuEngineering() {
                 
                 {/* DIRECT ANSWER (The Snippet) */}
                 <p className="lead font-sans text-2xl md:text-3xl font-light text-charcoal leading-snug mb-12 border-l-4 border-matte pl-6">
-                    <strong>The Short Version:</strong> To an AI, a PDF menu is just a flat image. It cannot "read" the ingredients, prices, or dietary tags efficiently. To rank for "best steak frites near me," your menu must be <strong>HTML text</strong> marked up with Schema data. Stop creating digital dead ends.
+                    <strong>The Short Version:</strong> To an AI, a PDF menu is just a flat image. It cannot &quot;read&quot; the ingredients, prices, or dietary tags efficiently. To rank for &quot;best steak frites near me,&quot; your menu must be <strong>HTML text</strong> marked up with Schema data. Stop creating digital dead ends.
                 </p>
 
                 <p>
                     We get it. The PDF ensures your branding is perfect. The fonts are right, the spacing is elegant, and the logo is perfectly centered. It looks great to a human sitting at a desktop computer in 2012.
                 </p>
                 <p>
-                    But on a phone? It's a pinch-and-zoom nightmare. And to an AI crawler? It's a "Do Not Enter" sign.
+                    But on a phone? It&apos;s a pinch-and-zoom nightmare. And to an AI crawler? It&apos;s a &quot;Do Not Enter&quot; sign.
                 </p>
 
                 <h2 className="text-5xl mt-16 mb-8">Why Robots Hate Images</h2>
@@ -88,7 +89,7 @@ export default function Post_MenuEngineering() {
                     If that data is locked in a PDF, the Answer Engine skips you. If it&apos;s in HTML text on your site, you win.
                 </p>
 
-                {/* TABLE FOR COMPARISON */}
+                {/* TABLE FOR COMPARISON area equivalent */}
                 <div className="my-12 overflow-x-auto not-prose">
                     <table className="w-full text-left border-collapse">
                         <thead>
@@ -166,6 +167,7 @@ export default function Post_MenuEngineering() {
             </div>
         </div>
       </article>
+      <Footer />
     </main>
   );
 }

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import SidebarBlade from "@/components/SidebarBlade";
+import Footer from "@/components/Footer";
 
 const TestimonialsPage = () => {
   const featuredTestimonial = {
@@ -187,23 +188,7 @@ const TestimonialsPage = () => {
           </motion.div>
         </section>
 
-        {/* Footer Standard */}
-        <footer className="py-20 px-8 border-t border-matte/10 bg-bone">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-4xl font-display font-black text-matte/20 uppercase tracking-tighter">
-              LAST CALL <br /> COLLECTIVE
-            </div>
-            <div className="text-center font-mono text-[10px] tracking-[0.4em] text-matte opacity-40 uppercase">
-              © 2024 / The House Standard
-            </div>
-            <a 
-              href="mailto:contact@lastcall.co"
-              className="font-mono text-[10px] tracking-widest text-matte border border-matte/20 px-8 py-4 uppercase hover:bg-matte hover:text-bone transition-all"
-            >
-              Inquiries
-            </a>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </main>
   );

@@ -140,34 +140,25 @@ const BentoSection = () => {
       category: "The Foundation + On Call",
       size: "md:col-span-2 md:row-span-2",
       img: "/images/projects/grapow/gra-pow-riverside-thai-restaurant-bar-hero.jpg",
-      hoverImg: "/images/projects/grapow/gra-pow-website-chatbot-receptionist.jpg",
       href: "/work/gra-pow",
       speed: 1.1,
     },
     {
       title: "Killer Queens Social House",
       category: "Design + Marketing",
-      size: "col-span-1 row-span-1",
-      img: "/images/projects/killer-queens/killerslogo.jpeg",
-      hoverImg: "/images/projects/killer-queens/killers.jpeg",
+      size: "col-span-1 md:row-span-2",
+      img: "/images/projects/killer-queens/thursday-night-martinis-kq-social-house.jpg",
+      hoverImg: "/images/projects/killer-queens/beer-pong-tournament-bar-nightlife.jpg",
       href: "/work/killer-queens",
       speed: 1.3,
     },
     {
       title: "Happy Dad Hard Seltzer",
       category: "Local Marketing",
-      size: "col-span-1 md:row-span-2",
-      img: "/images/projects/happy-dad/placeholder-1.svg",
+      size: "col-span-1 md:col-span-2 row-span-1",
+      img: "/images/projects/happy-dad/mockup-1.png",
       href: "/work/happy-dad",
       speed: 1.2,
-    },
-    {
-      title: "Wolfskill",
-      category: "Content Engine",
-      size: "col-span-1 row-span-1",
-      img: "/images/projects/wolfskill/hero.png",
-      href: "/work/wolfskill",
-      speed: 1.4,
     },
     {
       title: "Proabition",
@@ -176,14 +167,6 @@ const BentoSection = () => {
       img: "/images/projects/proabition/hero.png",
       href: "/work/proabition",
       speed: 1.25,
-    },
-    {
-      title: "Barrel and Stave Brewing",
-      category: "Branding & Design",
-      size: "col-span-1 row-span-1",
-      img: "/images/projects/barrel-and-stave/chingon.png",
-      href: "/work/barrel-and-stave",
-      speed: 1.35,
     },
   ];
 
@@ -195,8 +178,8 @@ const BentoSection = () => {
             Selected <br /> Works
           </h2>
         </div>
-        <p className="max-w-xs font-mono text-[8px] md:text-[10px] tracking-[0.2em] md:tracking-widest text-stone-500 uppercase leading-relaxed">
-           We don&apos;t build websites for everyone. We build standard-defining digital assets for those who own the night.
+        <p className="max-w-xl font-mono text-[10px] md:text-xs tracking-widest text-amber-500 uppercase leading-relaxed font-bold">
+           STOP PAYING FOR MARKETING AGENCIES WHO POST AI SLOP AND NEVER BEEN IN THE WEEDS ON A SATURDAY NIGHT. WE BUILD THE REVENUE ENGINE THAT PUTS ASSES IN YOUR BARSTOOLS.
         </p>
       </div>
 

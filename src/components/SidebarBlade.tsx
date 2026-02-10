@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 import { X, Menu } from "lucide-react";
 
 const SidebarBlade = () => {
@@ -12,27 +13,28 @@ const SidebarBlade = () => {
   const logoOpacity = useTransform(scrollYProgress, [0.25, 0.35], [0, 1]);
 
   const navLinks = [
-    { name: "HOUSE MENU", href: "#services", stagger: -10 },
+    { name: "HOUSE MENU", href: "/services", stagger: -10 },
+    { name: "THE TRUTH AUDIT", href: "/audit", stagger: 10 },
     { name: "THE PROOF", href: "/theproof", stagger: 20 },
     { name: "THE RECEIPTS", href: "/testimonials", stagger: -5 },
-    { name: "PULL UP A STOOL", href: "#contact", stagger: 15 },
+    { name: "PULL UP A STOOL", href: "/contact", stagger: 15 },
     { name: "SHIFT NOTES", href: "/blog", stagger: 25 },
+    { name: "FAQ", href: "/faq", stagger: 5 },
   ];
 
   return (
     <>
       {/* Desktop Blade (Hidden on Mobile) */}
-      <motion.button
+      <motion.div
         initial={{ x: -100 }}
         animate={{ x: 0 }}
-        aria-label="Open Menu"
-        className="fixed left-0 top-0 h-full w-[80px] bg-matte border-r border-charcoal z-50 cursor-pointer flex-col items-center py-10 transition-all duration-300 hover:bg-charcoal/80 hidden md:flex"
-        onClick={() => setIsOpen(true)}
+        className="fixed left-0 top-0 h-full w-[80px] bg-matte border-r border-charcoal z-50 flex flex-col items-center py-10 transition-all duration-300 hidden md:flex"
       >
-        {/* Authority Seal */}
-        <motion.div 
+        {/* Authority Seal (Menu Trigger) */}
+        <motion.button 
             whileHover={{ rotate: 15, scale: 1.1 }}
-            className="relative h-14 w-14 mb-8 grayscale invert opacity-90 brightness-125 transition-all duration-500"
+            onClick={() => setIsOpen(true)}
+            className="relative h-14 w-14 mb-8 grayscale invert opacity-90 brightness-125 transition-all duration-500 cursor-pointer"
         >
           <Image
             src="/badge.png"
@@ -41,18 +43,31 @@ const SidebarBlade = () => {
             priority
             className="object-contain"
           />
-        </motion.div>
+        </motion.button>
 
-        <div className="h-[100px] flex items-center justify-center mb-8">
-            <div className="-rotate-90 whitespace-nowrap text-stark/60 font-mono text-xs tracking-[0.5em] uppercase pointer-events-none">
+        <button 
+          onClick={() => setIsOpen(true)}
+          className="h-[100px] flex items-center justify-center mb-2 cursor-pointer group"
+        >
+            <div className="-rotate-90 whitespace-nowrap text-stark/80 font-mono text-xs tracking-[0.5em] uppercase group-hover:text-amber-500 transition-colors font-black">
                 [ Menu ]
             </div>
-        </div>
+        </button>
 
-        {/* Updated Logo (Coupe Glass) */}
-        <motion.div 
+        <Link 
+          href="/faq"
+          className="h-[100px] flex items-center justify-center mb-12 cursor-pointer group"
+        >
+            <div className="-rotate-90 whitespace-nowrap text-stark/80 font-mono text-xs tracking-[0.5em] uppercase group-hover:text-amber-500 transition-colors font-black">
+                [ FAQ ]
+            </div>
+        </Link>
+
+        {/* Updated Logo (Coupe Glass) - Also triggers menu */}
+        <motion.button 
             style={{ opacity: logoOpacity }}
-            className="relative h-16 w-16 grayscale opacity-80 brightness-150 pointer-events-none"
+            onClick={() => setIsOpen(true)}
+            className="relative h-16 w-16 grayscale opacity-80 brightness-150 cursor-pointer mb-12"
         >
           <Image
             src="/logo.png?v=953"
@@ -62,8 +77,8 @@ const SidebarBlade = () => {
             unoptimized
             className="object-contain"
           />
-        </motion.div>
-      </motion.button>
+        </motion.button>
+      </motion.div>
 
       {/* Mobile Burger (Hidden on Desktop) */}
       <motion.button
@@ -130,7 +145,7 @@ const SidebarBlade = () => {
                   transition={{ delay: 0.3 + idx * 0.1 }}
                   whileHover={{ x: link.stagger + 20, color: "#1A1A1A" }}
                   onClick={() => setIsOpen(false)}
-                  className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black text-matte/20 uppercase tracking-tighter leading-none hover:text-matte active:text-matte transition-all"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black text-matte/20 uppercase tracking-tighter leading-none hover:text-matte active:text-matte transition-all"
                   style={{ 
                     fontFamily: "var(--font-inter-tight)",
                   }}
@@ -140,10 +155,10 @@ const SidebarBlade = () => {
               ))}
             </nav>
 
-            <div className="absolute bottom-10 left-12 md:left-64 flex flex-col md:flex-row gap-4 md:gap-12 font-mono text-[8px] md:text-[10px] tracking-widest text-matte/40 uppercase">
-                <div>EST. 2024</div>
+            <div className="absolute bottom-10 left-12 md:left-64 flex flex-col md:flex-row gap-4 md:gap-12 font-mono text-[8px] md:text-[10px] tracking-widest text-matte/40 uppercase font-bold">
+                <div>IN THE WEEDS SINCE WAY BACK</div>
                 <div>Last Call Collective</div>
-                <div>By the Industry</div>
+                <div>BY THE INDUSTRY / FOR THE INDUSTRY</div>
             </div>
           </motion.div>
         )}

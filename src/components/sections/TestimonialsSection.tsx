@@ -67,7 +67,7 @@ const ReceiptCard = ({ children, className = "" }: { children: React.ReactNode; 
 
 const TestimonialsSection = () => {
   return (
-    <section className="bg-matte text-stark py-24 relative overflow-hidden">
+    <section className="bg-matte text-stark py-12 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-8 md:px-24">
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative">
@@ -112,7 +112,7 @@ const TestimonialsSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="flex justify-center pt-24"
+          className="flex justify-center pt-12"
         >
           <a 
             href="/testimonials"

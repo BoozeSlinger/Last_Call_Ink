@@ -11,7 +11,7 @@ export default function StickyCTA() {
         transition={{ delay: 2, duration: 0.5 }} // Wait for intro animations
         className="fixed bottom-6 right-6 md:bottom-12 md:right-12 z-50 mix-blend-difference"
     >
-        <Link href="/contact">
+        <Link href="/audit">
             <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -28,7 +28,7 @@ export default function StickyCTA() {
                         OPEN A TAB
                     </span>
                     <span className="font-mono text-[9px] md:text-[10px] tracking-widest uppercase text-matte/60 group-hover:text-matte transition-colors">
-                        Start Your Project
+                        Free Express Audit
                     </span>
                 </div>
             </motion.button>

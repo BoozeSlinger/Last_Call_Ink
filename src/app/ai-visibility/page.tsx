@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 import { 
   CheckCircle2, 
   Search, 
@@ -303,13 +304,7 @@ export default function AiVisibilityPage() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-12 border-t border-white/10 text-center">
-        <p className="font-mono text-[10px] text-bone/40 uppercase tracking-widest">
-          Last Call Collective &copy; 2026<br />
-          Built for the industry, by the industry.
-        </p>
-      </footer>
+      <Footer />
     </main>
   );
 }

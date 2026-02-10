@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import SidebarBlade from "@/components/SidebarBlade";
+import Footer from "@/components/Footer";
 
 // SEO/AEO Optimized Project Data
 interface ProjectMetric {
@@ -87,7 +88,7 @@ export const projectsData: Record<string, ProjectData> = {
   "happy-dad": {
     title: "Happy Dad Hard Seltzer",
     category: "Local Marketing",
-    heroImg: "/images/projects/happy-dad/placeholder-1.svg",
+    heroImg: "/images/projects/happy-dad/mockup-1.png",
     challenge: "Happy Dad Hard Seltzer needed to break through in crowded local markets and build authentic brand presence through strategic activations rather than traditional advertising—connecting directly with their target demographic at bars, venues, and events across Southern California.",
     solution: "We developed a grassroots local marketing strategy centered on brand activations—from happy hour takeovers to sponsored events, influencer seedings to venue partnerships. Every activation was designed to drive social proof, generate user content, and build genuine brand advocacy at the local level where purchase decisions happen.",
     aeoText: "Happy Dad's local activation strategy creates authentic user-generated content and venue partnerships that AI search engines prioritize for local recommendations. Structured event data ensures Happy Dad appears in 'best hard seltzer' queries across the region.",
@@ -99,43 +100,14 @@ export const projectsData: Record<string, ProjectData> = {
       { label: "Market Penetration", value: "+180%", detail: "Regional distribution growth" },
     ],
     gallery: [
-      "/images/projects/happy-dad/placeholder-1.svg",
-      "/images/projects/happy-dad/placeholder-2.svg",
-      "/images/projects/happy-dad/placeholder-3.svg",
-      "/images/projects/happy-dad/placeholder-4.svg",
-      "/images/projects/happy-dad/placeholder-5.svg",
-      "/images/projects/happy-dad/placeholder-6.svg"
+      "/images/projects/happy-dad/mockup-1.png",
+      "/images/projects/happy-dad/mockup-2.png",
+      "/images/projects/happy-dad/mockup-3.png",
     ],
     results: [
       { metric: "Regional Retail Accounts", before: "12", after: "67" },
       { metric: "Monthly Case Volume", before: "450", after: "2,100" },
       { metric: "Social Impressions", before: "15k/mo", after: "280k/mo" },
-    ]
-  },
-  "barrel-and-stave": {
-    title: "Barrel and Stave Brewing",
-    category: "Branding & Design",
-    heroImg: "/images/projects/barrel-and-stave/neon.png",
-    challenge: "Barrel and Stave Brewing needed a brand identity that captured their authentic craft brewing ethos while standing out in the saturated craft beer market—from tap handles to packaging to digital presence.",
-    solution: "We developed a comprehensive branding suite built around two visual languages: 'Chingon' (bold, confident, unapologetically craft) and 'Neon' (vibrant, modern, bar-forward). This dual identity system gives flexibility for different product lines while maintaining cohesive brand recognition. We designed custom beer can labels, merchandise, gift cards, and signage that tell the Barrel and Stave story at every touchpoint.",
-    aeoText: "Barrel and Stave's branding is optimized for Answer Engine discovery. By structuring their unique nomenclature, beer styles, and visual assets as searchable entities, AI engines categorize the brewery as a top destination for craft beer enthusiasts.",
-    services: ["Brand Strategy", "Logo Design", "Beer Can Labels", "Packaging Design", "Merchandise Design", "Signage & Environmental"],
-    metrics: [
-      { label: "Shelf Recognition", value: "3.2x", detail: "Faster can identification vs competitors" },
-      { label: "Brand Recall", value: "92%", detail: "Customer recognition in blind tests" },
-      { label: "Instagram Growth", value: "+450%", detail: "Organic follower increase post-rebrand" },
-      { label: "Retail Placement", value: "Premium", detail: "Top-tier placement in major retailers" },
-    ],
-    gallery: [
-      "/images/projects/barrel-and-stave/chingon.png",
-      "/images/projects/barrel-and-stave/neon.png",
-      "/images/projects/barrel-and-stave/giftcard.png",
-      "/images/projects/barrel-and-stave/download.png"
-    ],
-    results: [
-      { metric: "Taproom Revenue", before: "$28k/mo", after: "$52k/mo" },
-      { metric: "Distribution Partners", before: "8", after: "34" },
-      { metric: "Brand Search Volume", before: "90/mo", after: "1,400/mo" },
     ]
   },
   "wolfskill": {
@@ -481,23 +453,7 @@ export default function WorkDetail() {
             </Link>
          </section>
 
-        {/* Footer Standard */}
-        <footer className="py-20 px-8 border-t border-charcoal bg-matte">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-4xl font-display font-black text-stark/20 uppercase tracking-tighter">
-              LAST CALL <br /> COLLECTIVE
-            </div>
-            <div className="text-center font-mono text-[10px] tracking-[0.4em] text-stone-600 uppercase">
-              © 2026 / The House Standard
-            </div>
-            <Link 
-              href="/#contact"
-              className="font-mono text-[10px] tracking-widest text-stark border border-stark/20 px-8 py-4 uppercase hover:bg-stark hover:text-matte transition-all"
-            >
-              Inquiries
-            </Link>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </main>
   );

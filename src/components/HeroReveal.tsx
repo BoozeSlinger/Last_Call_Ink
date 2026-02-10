@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useMotionTemplate } from "framer-motion";
 import Image from "next/image";
 
 const HeroReveal = () => {
@@ -36,9 +36,12 @@ const HeroReveal = () => {
   const iceCubeScale = useTransform(smoothProgress, [0.3, 0.6], [1.1, 1]);
   const iceCubeOpacity = useTransform(smoothProgress, [0.3, 0.5], [0, 1]);
   
-  // Text parallax
+  // Text parallax and auto-dimming on scroll
   const textX = useTransform(smoothProgress, [0.4, 0.8], [100, 0]);
-  const textOpacity = useTransform(smoothProgress, [0.5, 0.7], [0, 1]);
+  const textOpacity = useTransform(smoothProgress, [0.4, 0.6, 0.8, 0.95], [0, 1, 0.3, 0.1]);
+  const textBlur = useTransform(smoothProgress, [0.7, 0.95], ["0px", "10px"]);
+
+  const blurValue = useMotionTemplate`blur(${textBlur})`;
 
   return (
     <div ref={containerRef} className="h-[300vh] relative bg-matte">
@@ -89,19 +92,25 @@ const HeroReveal = () => {
             
             <div className="absolute z-20 text-center px-4">
                  <motion.h1 
-                    style={{ x: textX, opacity: textOpacity }}
+                    style={{ x: textX, opacity: textOpacity, filter: blurValue }}
                     className="text-4xl md:text-7xl lg:text-9xl font-display font-black text-stark tracking-tighter uppercase leading-[0.8]"
                  >
                     THE HOUSE <br /> STANDARD
                  </motion.h1>
-                 <motion.p 
+                 <motion.div
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 0.5 }}
+                    whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
-                    className="mt-6 md:mt-8 font-mono text-[8px] md:text-sm tracking-[0.3em] md:tracking-[0.5em] text-stark uppercase"
+                    style={{ opacity: textOpacity, filter: blurValue }}
+                    className="mt-8 space-y-4"
                  >
-                    BY THE INDUSTRY, FOR THE INDUSTRY
-                 </motion.p>
+                    <p className="font-mono text-xs md:text-xl tracking-[0.3em] md:tracking-[0.5em] text-stark uppercase font-black">
+                        BY THE INDUSTRY, FOR THE INDUSTRY
+                    </p>
+                    <p className="font-mono text-[10px] md:text-xs tracking-widest text-amber-500 uppercase opacity-80 max-w-lg mx-auto leading-relaxed border-t border-white/10 pt-4">
+                        We have experience in the bar and behind the bar, <br className="hidden md:block" /> not just a computer screen.
+                    </p>
+                 </motion.div>
             </div>
         </motion.div>
       </div>

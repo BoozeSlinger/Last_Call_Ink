@@ -5,8 +5,16 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import SidebarBlade from "@/components/SidebarBlade";
+import Footer from "@/components/Footer";
 
-const ProjectCard = ({ project, idx }: { project: any, idx: number }) => (
+interface Project {
+  title: string;
+  category: string;
+  gridClass: string;
+  img: string;
+}
+
+const ProjectCard = ({ project, idx }: { project: Project, idx: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -143,23 +151,7 @@ const ProofPage = () => {
           </a>
         </section>
 
-        {/* Footer Standard */}
-        <footer className="py-20 px-8 border-t border-charcoal bg-matte">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-4xl font-display font-black text-stark/20 uppercase tracking-tighter">
-              LAST CALL <br /> COLLECTIVE
-            </div>
-            <div className="text-center font-mono text-[10px] tracking-[0.4em] text-stone-600 uppercase">
-              © 2024 / The House Standard
-            </div>
-            <a 
-              href="mailto:contact@lastcall.co"
-              className="font-mono text-[10px] tracking-widest text-stark border border-stark/20 px-8 py-4 uppercase hover:bg-stark hover:text-matte transition-all"
-            >
-              Inquiries
-            </a>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </main>
   );

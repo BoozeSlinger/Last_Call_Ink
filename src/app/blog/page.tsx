@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SidebarBlade from "@/components/SidebarBlade";
+import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Shift Notes — Blog | Last Call Collective",
+  description: "Industry insights from the front lines of bar and restaurant marketing. AEO strategy, menu engineering, operational audits, and the future of nightlife marketing.",
+};
 
 export default function BlogIndex() {
   const posts = [
@@ -31,7 +38,7 @@ export default function BlogIndex() {
       {/* Sidebar Navigation */}
       <SidebarBlade />
 
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-32 md:py-48">
+      <div className="max-w-[1400px] mx-auto pl-[60px] md:pl-[120px] pr-6 md:pr-12 py-16 md:py-20">
         {/* Header */}
         <header className="mb-24">
           {/* Home Button */}
@@ -83,6 +90,7 @@ export default function BlogIndex() {
           ))}
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
