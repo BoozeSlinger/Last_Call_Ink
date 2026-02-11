@@ -14,7 +14,6 @@ const nextConfig: NextConfig = {
     ],
     unoptimized: true,
   },
-  output: 'export',
 };
 
 export default nextConfig;
