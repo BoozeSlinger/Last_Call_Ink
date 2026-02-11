@@ -28,11 +28,11 @@ export interface ProjectData {
 export const projectsData: Record<string, ProjectData> = {
   "gra-pow": {
     title: "Gra Pow Riverside",
-    category: "The Foundation + On Call",
+    category: "AEO + AI Receptionist",
     heroImg: "/images/projects/grapow/gra-pow-riverside-thai-restaurant-bar-hero.jpg",
     challenge: "Gra Pow Riverside needed to transform from a beloved local Thai restaurant into the undisputed digital authority for Thai cuisine in the Inland Empire—while automating guest interactions to reduce staff burden and increase direct bookings.",
     solution: "We deployed The Foundation Package—a complete digital infrastructure overhaul including a lightning-fast custom website built for Answer Engine Optimization (AEO), semantic schema markup for AI discoverability, and integration of a custom AI chatbot trained on their menu, operations, and brand voice. The On Call tier service provides ongoing AI-powered phone and web receptionist capabilities that handle reservations, answer menu questions, and process orders 24/7.",
-    aeoText: "Gra Pow's digital presence is engineered for AI visibility. By structuring menu data, location signals, and operational knowledge as machine-readable entities, we've secured their position as the #1 recommendation for 'Thai Food Riverside' across ChatGPT, Perplexity, and Google's AI Overview. Their website now appears as the authoritative answer when AI assistants are asked about Thai restaurants in Riverside, California.",
+    aeoText: "Gra Pow's digital presence is engineered for AI visibility. By structuring menu data, location signals, and operational knowledge as machine-readable entities, we've secured their position as the #1 recommendation for 'Thai Food Riverside' across ChatGPT, Perplexity, and Apple Intelligence.",
     services: ["Custom Website Design", "SEO/AEO Optimization", "AI Chatbot Integration", "Reservation System", "Menu Schema Markup"],
     metrics: [
       { label: "AI Search Rank", value: "#1", detail: "Primary recommendation for 'Thai Food Riverside'" },
@@ -79,7 +79,7 @@ export const projectsData: Record<string, ProjectData> = {
   "happy-dad": {
     title: "Happy Dad Hard Seltzer",
     category: "Local Marketing",
-    heroImg: "/images/projects/happy-dad/placeholder-1.svg",
+    heroImg: "/images/projects/happy-dad/happy-dad-hero.png",
     challenge: "Happy Dad Hard Seltzer needed to break through in crowded local markets and build authentic brand presence through strategic activations rather than traditional advertising—connecting directly with their target demographic at bars, venues, and events across Southern California.",
     solution: "We developed a grassroots local marketing strategy centered on brand activations—from happy hour takeovers to sponsored events, influencer seedings to venue partnerships. Every activation was designed to drive social proof, generate user content, and build genuine brand advocacy at the local level where purchase decisions happen.",
     aeoText: "Happy Dad's local activation strategy creates the type of authentic user-generated content and venue partnerships that AI search engines prioritize for local recommendations. Structured event data and location-based signals ensure Happy Dad appears in 'best hard seltzer' and venue-specific queries across the Inland Empire.",
@@ -91,14 +91,10 @@ export const projectsData: Record<string, ProjectData> = {
       { label: "Market Penetration", value: "+180%", detail: "Regional distribution growth" },
     ],
     gallery: [
-      "/images/projects/happy-dad/placeholder-1.svg",
-      "/images/projects/happy-dad/placeholder-2.svg",
-      "/images/projects/happy-dad/placeholder-3.svg",
-      "/images/projects/happy-dad/placeholder-4.svg",
-      "/images/projects/happy-dad/placeholder-5.svg",
-      "/images/projects/happy-dad/placeholder-6.svg",
-      "/images/projects/happy-dad/placeholder-7.svg",
-      "/images/projects/happy-dad/placeholder-8.svg"
+      "/images/projects/happy-dad/happy-dad-activation-1.png",
+      "/images/projects/happy-dad/happy-dad-activation-2.png",
+      "/images/projects/happy-dad/happy-dad-activation-3.png",
+      "/images/projects/happy-dad/happy-dad-activation-4.png"
     ],
     results: [
       { metric: "Regional Retail Accounts", before: "12", after: "67" },
@@ -121,7 +117,8 @@ export const projectsData: Record<string, ProjectData> = {
       { label: "Engagement Rate", value: "8.7%", detail: "Above industry average of 1.2%" },
     ],
     gallery: [
-      "/images/projects/wolfskill/hero.png"
+      "/images/projects/wolfskill/wolfskill-cocktail-1.png",
+      "/images/projects/wolfskill/wolfskill-interior-1.png"
     ],
     results: [
       { metric: "Monthly Foot Traffic", before: "2,400", after: "3,800" },
@@ -144,7 +141,9 @@ export const projectsData: Record<string, ProjectData> = {
       { label: "Automation Rate", value: "87%", detail: "Campaigns running without manual input" },
     ],
     gallery: [
-      "/images/projects/proabition/hero.png"
+      "/images/projects/proabition/proabition-bar-1.png",
+      "/images/projects/proabition/proabition-interior-1.png",
+      "/images/projects/proabition/proabition-detail-1.png"
     ],
     results: [
       { metric: "Monthly Email Revenue", before: "$0", after: "$18,400" },
@@ -167,7 +166,8 @@ export const projectsData: Record<string, ProjectData> = {
       { label: "Organic Traffic", value: "+340%", detail: "Website visitors from search" },
     ],
     gallery: [
-      "/images/projects/thompson-brewing/hero.png"
+      "/images/projects/thompson-brewing/thompson-brewing-taproom-1.png",
+      "/images/projects/thompson-brewing/thompson-brewing-beer-1.png"
     ],
     results: [
       { metric: "Online Store Revenue", before: "$2,100/mo", after: "$8,900/mo" },

@@ -70,7 +70,7 @@ const SpotlightCard = ({
 const BentoCard = ({ project }: { project: Project }) => (
   <Link href={project.href} className={`${project.size} block`}>
     <SpotlightCard
-      className="relative w-full h-full group border border-charcoal/50 hover:border-amber-500/50 transition-all duration-700 cursor-pointer bg-charcoal overflow-hidden transform-gpu"
+      className="relative w-full h-full group border border-charcoal/50 hover:border-amber-500/50 transition-all duration-700 cursor-pointer bg-matte/40 backdrop-blur-md overflow-hidden transform-gpu"
     >
       {/* Animated Neon Border */}
       <div className="absolute inset-0 z-30 pointer-events-none">
@@ -137,9 +137,10 @@ const BentoSection = () => {
   const projects: Project[] = [
     {
       title: "Gra Pow Riverside",
-      category: "The Foundation + On Call",
+      category: "AEO + AI Receptionist",
       size: "md:col-span-2 md:row-span-2",
       img: "/images/projects/grapow/gra-pow-riverside-thai-restaurant-bar-hero.jpg",
+      hoverImg: "/images/projects/grapow/pow1.jpeg",
       href: "/work/gra-pow",
       speed: 1.1,
     },
@@ -156,7 +157,8 @@ const BentoSection = () => {
       title: "Happy Dad Hard Seltzer",
       category: "Local Marketing",
       size: "col-span-1 md:col-span-2 row-span-1",
-      img: "/images/projects/happy-dad/mockup-1.png",
+      img: "/images/projects/happy-dad/happy-dad-hero.png",
+      hoverImg: "/images/projects/happy-dad/happy-dad-activation-1.png",
       href: "/work/happy-dad",
       speed: 1.2,
     },

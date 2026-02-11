@@ -21,7 +21,7 @@ const AIAuditSection = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/10 via-blue-500/10 to-amber-500/10 rounded-xl blur-2xl opacity-50 animate-pulse" />
             
             {/* Main Content Card */}
-            <div className="bg-charcoal/60 backdrop-blur-xl text-stark p-10 md:p-20 rounded-xl border border-white/10 relative shadow-2xl overflow-hidden group">
+            <div className="bg-matte/40 backdrop-blur-md text-stark p-10 md:p-20 rounded-xl border border-white/10 relative shadow-2xl overflow-hidden group">
                 
                 {/* Scanner Line Animation */}
                 <motion.div 

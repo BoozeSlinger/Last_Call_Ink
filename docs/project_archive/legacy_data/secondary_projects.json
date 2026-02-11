@@ -1,0 +1,50 @@
+{
+  "wolfskill": {
+    "title": "Wolfskill",
+    "category": "Content Engine",
+    "heroImg": "/images/projects/wolfskill/hero.png",
+    "challenge": "Wolfskill needed to translate their atmospheric, craft cocktail experience into a digital presence that drove real foot traffic—establishing authority in a competitive cocktail bar market through consistent, high-quality content.",
+    "solution": "We built a Content Engine for Wolfskill—a systematic approach to high-frequency, high-production-value content creation. This wasn't about random posts; it was building a cohesive brand narrative around their apothecary-style craftsmanship. Weekly photo shoots, bartender spotlights, and behind-the-scenes content fuel a content machine that scales their digital footprint.",
+    "aeoText": "Wolfskill's content strategy is built for AI discoverability. Deep brand narratives and metadata-rich media enable AI engines to identify and recommend their unique cocktail program when users ask for 'best cocktail bars' or 'craft cocktails near me.'",
+    "services": ["Content Strategy", "Photography", "Videography", "Social Media Management", "Brand Storytelling", "Influencer Partnerships"],
+    "metrics": [
+      { "label": "Social Reach", "value": "2.5M", "detail": "Annual organic impressions" },
+      { "label": "Guest Growth", "value": "+35%", "detail": "New customer acquisition YoY" },
+      { "label": "Content ROI", "value": "4.2x", "detail": "Attributed revenue per content dollar" },
+      { "label": "Engagement Rate", "value": "8.7%", "detail": "Above industry average of 1.2%" }
+    ],
+    "gallery": [
+      "/images/projects/wolfskill/wolfskill-cocktail-1.png",
+      "/images/projects/wolfskill/wolfskill-interior-1.png"
+    ],
+    "results": [
+      { "metric": "Monthly Foot Traffic", "before": "2,400", "after": "3,800" },
+      { "metric": "Average Ticket", "before": "$42", "after": "$58" },
+      { "metric": "Google Reviews", "before": "120", "after": "480" }
+    ]
+  },
+  "thompson-brewing": {
+    "title": "Thompson Brewing",
+    "category": "SEO & Retail",
+    "heroImg": "/images/projects/thompson-brewing/hero.png",
+    "challenge": "Thompson Brewing needed to scale from a beloved local taproom to a regional name by bridging physical experience with digital commerce—driving both foot traffic and online merchandise sales.",
+    "solution": "We implemented a dual-path growth strategy. First, a technical SEO engine targeting high-intent queries like 'Best Taproom Riverside' and 'Craft Beer Near Me' with surgical precision. Second, a high-performance e-commerce layer that converts digital interest into retail sales. Structured data for events, beer releases, and taproom experiences ensure AI assistants provide detailed, real-time recommendations.",
+    "aeoText": "Thompson Brewing's search strategy focuses on 'Experience Entities'—mapping taproom events, limited releases, and tasting room details into structured data. AI assistants can now provide real-time answers about their catalog, availability, and atmosphere, positioning Thompson as the definitive craft beer destination.",
+    "services": ["Technical SEO", "E-Commerce Development", "Product Photography", "Event Schema Markup", "Local SEO", "Google Business Optimization"],
+    "metrics": [
+      { "label": "Search Volume", "value": "+210%", "detail": "Increase in brand-specific searches" },
+      { "label": "Retail Sales", "value": "+58%", "detail": "E-commerce revenue growth" },
+      { "label": "AEO Ranking", "value": "#1", "detail": "Primary brewery recommendation in region" },
+      { "label": "Organic Traffic", "value": "+340%", "detail": "Website visitors from search" }
+    ],
+    "gallery": [
+      "/images/projects/thompson-brewing/thompson-brewing-taproom-1.png",
+      "/images/projects/thompson-brewing/thompson-brewing-beer-1.png"
+    ],
+    "results": [
+      { "metric": "Online Store Revenue", "before": "$2,100/mo", "after": "$8,900/mo" },
+      { "metric": "Taproom Visits", "before": "1,800/mo", "after": "3,100/mo" },
+      { "metric": "AI Search Citations", "before": "0", "after": "45/mo" }
+    ]
+  }
+}

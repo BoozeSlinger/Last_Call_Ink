@@ -155,6 +155,21 @@ const SidebarBlade = () => {
               ))}
             </nav>
 
+            {/* FAQ Preview in Sidebar */}
+            <div className="absolute top-24 right-32 hidden xl:flex flex-col gap-8 max-w-sm pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity">
+                <span className="font-mono text-[10px] tracking-[0.5em] text-matte uppercase font-bold">House Rules</span>
+                <div className="space-y-6">
+                    <div>
+                        <div className="font-display font-black text-sm uppercase mb-2">01 Operational Audit?</div>
+                        <div className="font-mono text-[9px] uppercase leading-relaxed tracking-widest">A financial health check for your P&L. We plug the cash leaks before scaling.</div>
+                    </div>
+                    <div>
+                        <div className="font-display font-black text-sm uppercase mb-2">02 Why AEO?</div>
+                        <div className="font-mono text-[9px] uppercase leading-relaxed tracking-widest">SEO is dead. AI engines crave semantic data. Without AEO, you&apos;re invisible.</div>
+                    </div>
+                </div>
+            </div>
+
             <div className="absolute bottom-10 left-12 md:left-64 flex flex-col md:flex-row gap-4 md:gap-12 font-mono text-[8px] md:text-[10px] tracking-widest text-matte/40 uppercase font-bold">
                 <div>IN THE WEEDS SINCE WAY BACK</div>
                 <div>Last Call Collective</div>

@@ -11,25 +11,25 @@ const tiers = [
     period: "monthly",
     description: "The Insurance Policy. Protect your reputation without the busy work.",
     features: [
-      "Reputation Defense (All Reviews Response within 48hrs)",
-      "The Active Signal (Weekly GMB Updates + Monthly Blog)",
-      "Listing Maintenance (24/7 Hours/Menu Sync)",
-      "Equity Vault Management (Own Your Data)",
+      "REPUTATION DEFENSE: Response to ALL reviews within 48 hours.",
+      "THE ACTIVE SIGNAL: Weekly Google Profile updates + monthly local blog posts.",
+      "LISTING MAINTENANCE: Ongoing 24/7 sync of hours and menu details.",
+      "EQUITY VAULT MANAGEMENT: Private database management. You own the info.",
     ],
   },
   {
-    name: "THE CALL",
+    name: "THE CALL ⭐",
     price: "1,149",
     period: "monthly",
     description: "The 'Fill The Seats' Button. The engine that drives revenue.",
     features: [
       "Everything in The Well",
-      "The Liquid Asset System (12 SMS + Monthly Email)",
-      "Missed Call Recovery (Auto Text-Back)",
-      "Group Revenue Engine (Birthday/Anniv Offers)",
-      "Social Media Autopilot (3x/Week, 12 Posts/Mo)",
-      "Influencer Outreach (6 Invites/Mo)",
-      "Monthly Strategy & ROI Reports (1hr Zoom)",
+      "THE LIQUID ASSET SYSTEM: 12 SMS activations + 'The Pour' Email campaign.",
+      "MISSED CALL RECOVERY: Full management of automated text-back system.",
+      "THE GROUP REVENUE ENGINE: Automated Birthday/Anniversary group bookings.",
+      "SOCIAL MEDIA AUTOPILOT: 12 strategic posts per month.",
+      "INFLUENCER OUTREACH: 6 local creators/influencers per month.",
+      "STRATEGY & ROI: Monthly 1-hour Zoom ROI review and planning.",
     ],
     isPopular: true,
   },
@@ -40,10 +40,10 @@ const tiers = [
     description: "The Household Name. For the venue that wants to be #1 in the city.",
     features: [
       "Everything in The Call",
-      "Monthly Content Studio (50 Photos + 5 Reels)",
-      "Daily Social Management (5-7x/Week)",
-      "Aggressive Influencer Outreach (10+/mo)",
-      "Priority VIP Access (24/7 Agency Owner Text)",
+      "MONTHLY CONTENT STUDIO: 2-hour shoot (50 photos + 5 Reels/TikToks).",
+      "DAILY SOCIAL MANAGEMENT: 5-7 posts per week with lead capture.",
+      "AGGRESSIVE INFLUENCER OUTREACH: 10+ local influencers per month.",
+      "PRIORITY VIP ACCESS: Direct 24/7 text line to agency owner.",
     ],
   }
 ];
@@ -86,12 +86,12 @@ const ServicesSection = () => {
               {/* 2-Column Deliverables Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
                  {[
-                     { id: "01", title: "High-Converting Website", desc: "AEO/SEO/GEO optimized. Show up as a Top Recommendation when people search 'Best Bar Near Me' or ask AI where to go tonight." },
+                     { id: "01", title: "High-Converting Website", desc: "Custom build optimized for AEO/SEO/GEO. Show up as a Top Recommendation in AI and local search." },
                      { id: "02", title: "2-Hour Content Studio", desc: "50 edited photos + 5 high-impact short-form videos. We make your cocktails look like $15 instead of $6." },
-                     { id: "03", title: "Digital Infrastructure", desc: "Sync across Google, Yelp, Apple Maps, and 20+ directories. No more 'I showed up and you were closed' reviews." },
-                     { id: "04", title: "The Equity Vault", desc: "Custom landing page and database to capture guest data. You own your customers—not Yelp, not Instagram." },
-                     { id: "05", title: "Custom Asset Design", desc: "On-brand QR designs for stickers, signage, and table tents. Physical hooks that capture data automatically." },
-                     { id: "06", title: "Missed Call Text-Back", desc: "The ultimate safety net. Auto-text guests back to book a table or check tonight's specials when you can't answer." }
+                     { id: "03", title: "Digital Infrastructure", desc: "Sync across Google, Yelp, Apple Maps, and 20+ local directories. Total algorithmic trust." },
+                     { id: "04", title: "The Equity Vault", desc: "Custom landing page and database. You own your customers' information—not Yelp, not Instagram." },
+                     { id: "05", title: "Custom Asset Design", desc: "On-brand QR designs for physical hooks that capture guest data automatically in the venue." },
+                     { id: "06", title: "Missed Call Text-Back", desc: "Automated safety net. Systems texts the guest back immediately to book when you're too slammed to answer." }
                  ].map((item, idx) => (
                      <motion.div 
                          key={idx} 
@@ -137,10 +137,15 @@ const ServicesSection = () => {
                     Build The Bar <br /> Then Fill It
                 </h2>
             </div>
-            <p className="max-w-md text-right font-mono opacity-50 text-sm leading-relaxed uppercase tracking-widest">
-                Most agencies sell clicks. We deal in Revenue and Regulars. <br/>
-                Choose your engine.
-            </p>
+            <div className="max-w-md text-right">
+                <p className="font-mono opacity-50 text-sm leading-relaxed uppercase tracking-widest mb-4">
+                    Most agencies sell clicks. We deal in Revenue and Regulars. <br/>
+                    Choose your engine.
+                </p>
+                <p className="font-mono text-[10px] text-amber-500 uppercase tracking-widest font-black">
+                    *Tiers require a THE FOUNDATION renovation first.
+                </p>
+            </div>
         </motion.div>
       </div>
 
@@ -158,9 +163,9 @@ const ServicesSection = () => {
                 delay: idx * 0.2,
                 ease: [0.16, 1, 0.3, 1]
               }}
-              className={`p-10 border border-charcoal relative group hover:border-stark/40 transition-colors flex flex-col justify-between min-h-[600px] ${
-                idx === 1 ? "md:-translate-y-8 bg-white/5 border-amber-500/30" : idx === 2 ? "md:translate-y-8" : ""
-              }`}
+              className={`p-10 border border-charcoal/30 backdrop-blur-md relative group hover:border-stark/40 transition-colors flex flex-col justify-between min-h-[600px] ${
+                idx === 1 ? "md:-translate-y-8 bg-white/5 border-amber-500/30" : "bg-charcoal/20"
+              } ${idx === 2 ? "md:translate-y-8" : ""}`}
             >
               <div>
                 <div className="flex justify-between items-start mb-12">
@@ -220,13 +225,13 @@ const ServicesSection = () => {
                      <div>
                          <h4 className="font-display font-black text-lg uppercase mb-4 border-b border-matte/20 pb-2">Standard Terms</h4>
                          <p className="font-mono text-xs opacity-80 leading-relaxed font-bold uppercase tracking-widest">
-                             Month-to-month. Cancel anytime with 30 days notice. You own everything we build (website, photos, data).
+                             Month-to-month on service tiers. Cancel anytime with 30 days notice. You own everything we build—website, photos, and customer data.
                          </p>
                      </div>
                      <div>
                          <h4 className="font-display font-black text-lg uppercase mb-4 border-b border-matte/20 pb-2">Partner Offer</h4>
                          <p className="font-mono text-xs opacity-80 leading-relaxed font-bold uppercase tracking-widest">
-                             Commit to 6 months to THE CALL tier or higher to unlock the <span className="text-amber-600 font-black">$1,500 Foundation Setup</span> (Save $1,000 off standard $2,500).
+                             Commit to 6 months of THE CALL tier or higher to unlock the <span className="text-amber-600 font-black">$1,500 Foundation Setup</span> (Save $1,000 off standard $2,500).
                          </p>
                      </div>
                  </div>
@@ -242,6 +247,52 @@ const ServicesSection = () => {
       {/* Embedded Testimonials */}
       <div className="border-t border-charcoal/30">
         <TestimonialsSection />
+      </div>
+
+      {/* Small FAQ Section Below Testimonials */}
+      <div className="border-t border-charcoal/30 py-24 px-8 md:px-24">
+        <div className="max-w-3xl mx-auto">
+          <span className="font-mono text-[10px] tracking-[0.5em] text-amber-500 uppercase mb-4 block font-bold text-center">House Rules</span>
+          <h2 className="text-5xl md:text-6xl font-display font-black tracking-tighter uppercase leading-[0.8] mb-16 text-center">
+            Common <br /> Questions
+          </h2>
+          <div className="space-y-12">
+            {[
+              {
+                q: "What is an operational audit?",
+                a: "A financial health check for your P&L. We identify where shrinkage or stagnant sales are leaking cash and plug the holes before scaling."
+              },
+              {
+                q: "Why do I need AEO?",
+                a: "Traditional SEO is dead. AI engines like Perplexity and ChatGPT look for semantic data. Without AEO, you're invisible to the future of search."
+              },
+              {
+                q: "Do I own my data?",
+                a: "100%. Unlike Yelp or Instagram, we build an Equity Vault where you own every guest contact. If you leave, you take the list with you."
+              }
+            ].map((faq, idx) => (
+              <div key={idx} className="group">
+                <h4 className="font-display font-black text-xl uppercase mb-4 group-hover:text-amber-500 transition-colors">
+                  <span className="font-mono text-[10px] text-amber-500/50 mr-4">0{idx + 1}</span>
+                  {faq.q}
+                </h4>
+                <p className="font-mono text-[11px] opacity-50 uppercase leading-relaxed tracking-widest border-l border-amber-500/30 pl-6">
+                  {faq.a}
+                  {idx === 2 && (
+                    <span className="block mt-4 text-amber-500 font-black">
+                      Make them an offer they feel stupid saying no to.
+                    </span>
+                  )}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-20">
+            <a href="/faq" className="font-mono text-[10px] tracking-[0.4em] uppercase border-b border-stark/20 pb-2 hover:text-amber-500 hover:border-amber-500 transition-all">
+              See the full menu of questions
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
