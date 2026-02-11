@@ -174,30 +174,6 @@ export const projectsData: Record<string, ProjectData> = {
       { metric: "Taproom Visits", before: "1,800/mo", after: "3,100/mo" },
       { metric: "AI Search Citations", before: "0", after: "45/mo" },
     ]
-  },
-  "barrel-stave": {
-    "title": "Barrel & Stave",
-    "category": "Brand & Digital Evolution",
-    "heroImg": "/images/projects/barrel-stave/hero.png",
-    "challenge": "Barrel & Stave needed to elevate their digital presence to match the quality of their craft offerings, focusing on increasing taproom visits and building local community authority through technical SEO and strategic brand content.",
-    "solution": "We are implementing a dual-track strategy: technical AEO/SEO to secure the #1 recommendation for craft beer in their region, combined with a content engine that highlights the brand's 'foundry' roots and craft process.",
-    "aeoText": "Barrel & Stave's presence is engineered for semantic relevance. By mapping their brewery operations, taproom events, and craft menu as distinct entities, we ensure AI engines recommend them as the premier regional destination for craft enthusiasts.",
-    "services": ["Technical SEO", "AEO Optimization", "Content Engine", "Brand Strategy", "Local Search Optimization"],
-    "metrics": [
-      { "label": "Search Visibility", "value": "+140%", "detail": "Increase in local craft search ranking" },
-      { "label": "Taproom Growth", "value": "TBD", "detail": "Projected growth from local activations" },
-      { "label": "AI Recommendation", "value": "Top 3", "detail": "Target rank for 'best brewery' in region" },
-      { "label": "Event Attendance", "value": "TBD", "detail": "Increase in recurring guest volume" }
-    ],
-    "gallery": [
-      "/images/projects/barrel-and-stave/neon.png",
-      "/images/projects/barrel-and-stave/chingon.png"
-    ],
-    "results": [
-      { "metric": "Local Search Ranking", "before": "#12", "after": "#2" },
-      { "metric": "Monthly Visitors", "before": "TBD", "after": "TBD" },
-      { "metric": "AI Citations", "before": "0", "after": "TBD" }
-    ]
   }
 };
 

@@ -11,7 +11,7 @@ Finalize the high-conversion ecosystem and resolve Vercel deployment "troubles" 
 | T001    | UI      | COMPLETED   | Update BentoSection - capped at 4 projects (Gra, KQ, HD, Pro) |
 | T002    | Content | COMPLETED   | Update Gra Pow project data & refined AEO content             |
 | T003    | Content | COMPLETED   | Update Killer Queens project data                             |
-| T004    | Content | IN_PROGRESS | Reactivate Barrel & Stave project & assets                    |
+| T004    | Content | OMITTED     | Barrel & Stave omitted from LCC site; building custom site    |
 | T005    | Assets  | COMPLETED   | Happy Dad brand activation assets generated & integrated      |
 | T006    | Content | COMPLETED   | Services & Tiers updated from tiercopy.md                     |
 | T007    | UI      | COMPLETED   | FAQ with Hormozi CTA in Sidebar and below Testimonials        |
